@@ -9,5 +9,12 @@
 import UIKit
 
 class ProfileCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var idLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var numberOfSubjectLabel: UILabel!
     
 }

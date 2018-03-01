@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
+		AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E5E3F2047E53D00B5EE13 /* Users.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52320479DC20005FE5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52220479DC20005FE5D /* ViewController.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1C112D36712946D5494F8A17 /* Pods-TuitionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AA1E5E3F2047E53D00B5EE13 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AABAD52220479DC20005FE5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,13 +102,14 @@
 				AABAD52220479DC20005FE5D /* ViewController.swift */,
 				AABAD52420479DC20005FE5D /* Main.storyboard */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
-				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */,
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
 				AABAD5402047AB180005FE5D /* AttendanceViewController.swift */,
 				AABAD53A2047AAF70005FE5D /* SubjectViewController.swift */,
 				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
 				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
+				AA1E5E3F2047E53D00B5EE13 /* Users.swift */,
+				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD52720479DC20005FE5D /* Assets.xcassets */,
 				AABAD52920479DC20005FE5D /* LaunchScreen.storyboard */,
 				AABAD52C20479DC20005FE5D /* Info.plist */,
@@ -254,6 +257,7 @@
 			files = (
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
+				AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */,
 				AABAD52320479DC20005FE5D /* ViewController.swift in Sources */,
 				AABAD53B2047AAF70005FE5D /* SubjectViewController.swift in Sources */,
 				AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */,
