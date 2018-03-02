@@ -234,7 +234,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No of Subjects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e8-Q6-G7l">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subjects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e8-Q6-G7l">
                                                             <rect key="frame" x="0.0" y="101" width="114" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -271,7 +271,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qg2-sZ-lUt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XWB-GS-jbS"/>
+                    <navigationItem key="navigationItem" id="XWB-GS-jbS">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ffy-le-hjy">
+                            <connections>
+                                <action selector="logoutBtnTapped:" destination="jn6-KH-LiJ" id="Poz-y5-vyy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="uo3-Kd-jsJ" id="kFh-cm-S6S"/>
                     </connections>

@@ -14,7 +14,6 @@
 		4EF5AFC920490C86005BD48E /* Parents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFC820490C86005BD48E /* Parents.swift */; };
 		4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFCC2049185D005BD48E /* SignInViewController.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
-		AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E5E3F2047E53D00B5EE13 /* Users.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
 		AABAD52820479DC20005FE5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52720479DC20005FE5D /* Assets.xcassets */; };
@@ -272,6 +271,7 @@
 			files = (
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
+				AABAD52320479DC20005FE5D /* ViewController.swift in Sources */,
 				4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */,
 				AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */,
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,

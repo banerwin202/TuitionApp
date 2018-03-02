@@ -16,4 +16,15 @@ class Student {
     var uid : String = ""
     var attendance : String = ""
     var imageURL : String = ""
+    var url : String = ""
+    
+    init(uid: String, dict: [String:Any]) {
+        
+        self.uid = uid
+        self.name = dict["name"] as? String ?? "No Name"
+        self.url = dict["profilePicUrl"] as? String ?? "No Url"
+   
+    }
+
+
 }
