@@ -14,6 +14,8 @@
 		4E7641632047F3850051D42E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641622047F3850051D42E /* Extension.swift */; };
 		4EF5AFC920490C86005BD48E /* Parents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFC820490C86005BD48E /* Parents.swift */; };
 		4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFCC2049185D005BD48E /* SignInViewController.swift */; };
+		4EF5AFD1204955E1005BD48E /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */; };
+		4EF5AFD2204955E1005BD48E /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		4E7641622047F3850051D42E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4EF5AFC820490C86005BD48E /* Parents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parents.swift; sourceTree = "<group>"; };
 		4EF5AFCC2049185D005BD48E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AABAD52520479DC20005FE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				00D9FEDC2047D80700A4C596 /* Subject.swift */,
 				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
 				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
+				4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */,
+				4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */,
 				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD52720479DC20005FE5D /* Assets.xcassets */,
 				AABAD52920479DC20005FE5D /* LaunchScreen.storyboard */,
@@ -194,6 +200,7 @@
 			files = (
 				AABAD52B20479DC20005FE5D /* LaunchScreen.storyboard in Resources */,
 				AABAD5332047A23D0005FE5D /* GoogleService-Info.plist in Resources */,
+				4EF5AFD2204955E1005BD48E /* ResultTableViewCell.xib in Resources */,
 				AABAD52820479DC20005FE5D /* Assets.xcassets in Resources */,
 				AABAD5352047A81B0005FE5D /* Detail.storyboard in Resources */,
 				AABAD52620479DC20005FE5D /* Main.storyboard in Resources */,
@@ -282,6 +289,7 @@
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
 				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
+				4EF5AFD1204955E1005BD48E /* ResultTableViewCell.swift in Sources */,
 				4E7641632047F3850051D42E /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,7 +65,7 @@ class SignUpViewController: UIViewController {
                     
                     let userPost: [String:Any] = ["Username": userName, "Email": email, "Contact":contact]
                     
-                    self.ref.child("Parent").childByAutoId().child(validUser.uid).setValue(userPost)
+                    self.ref.child("Tuition").child("Parent").child(validUser.uid).setValue(userPost)
                     
                     let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
                     guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
