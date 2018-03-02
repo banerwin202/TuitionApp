@@ -57,6 +57,11 @@ class SignUpViewController: UIViewController {
                 
                 //HANDLE SUCESSFUL CREATION OF USER
                 if let validUser = user {
+                    self.usernameTextField.text = ""
+                    self.emailTextField.text = ""
+                    self.contactTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.confirmPasswordTextField.text = ""
                     
                     let userPost: [String:Any] = ["Username": userName, "Email": email, "Contact":contact]
                     

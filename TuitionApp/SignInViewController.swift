@@ -16,7 +16,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton! {
+        didSet {
+            signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        }
+    }
     
     var ref: DatabaseReference!
 

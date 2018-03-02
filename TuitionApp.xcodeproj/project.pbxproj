@@ -37,7 +37,6 @@
 		4E7641622047F3850051D42E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4EF5AFC820490C86005BD48E /* Parents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parents.swift; sourceTree = "<group>"; };
 		4EF5AFCC2049185D005BD48E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		AA1E5E3F2047E53D00B5EE13 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AABAD52520479DC20005FE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
 				AABAD5402047AB180005FE5D /* AttendanceViewController.swift */,
 				AABAD53A2047AAF70005FE5D /* SubjectViewController.swift */,
-				AA1E5E3F2047E53D00B5EE13 /* Users.swift */,
 				4EF5AFC820490C86005BD48E /* Parents.swift */,
 				00D9FEDE2048019000A4C596 /* Student.swift */,
 				00D9FEDC2047D80700A4C596 /* Subject.swift */,
@@ -271,9 +269,7 @@
 			files = (
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
-				AABAD52320479DC20005FE5D /* ViewController.swift in Sources */,
 				4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */,
-				AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */,
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,
 				AABAD53D2047AB050005FE5D /* ScheduleViewController.swift in Sources */,
 				AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */,
