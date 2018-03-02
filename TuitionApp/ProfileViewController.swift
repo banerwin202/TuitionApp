@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.dataSource = self
+//            collectionView.dataSource = self
             
         }
     }
@@ -99,3 +99,4 @@ extension ProfileViewController : UICollectionViewDataSource {
         return cell
     }
 }
+
