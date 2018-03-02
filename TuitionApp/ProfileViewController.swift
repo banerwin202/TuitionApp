@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        observeUsers()
         
    
     }
@@ -45,6 +46,7 @@ class ProfileViewController: UIViewController {
     
     func observeUsers() {
         ref.child("Parent").childByAutoId().observe(.value) { (snapshot) in
+            
             print("testing")
         }
         
@@ -55,16 +57,26 @@ class ProfileViewController: UIViewController {
         ref.child("Parent").childByAutoId().child("Student").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
             
             guard let userDict = snapshot.value as? [String:Any] else {return}
-//
-//            let user =
-//        }) { (<#Error#>) in
-//            <#code#>
+
+            let user = Student(uid: snapshot.key, dict: userDict)
+            
+            DispatchQueue.main.async {
+                self.students.append(user)
+                let indexPath = IndexPath(row: self.students.count - 1, section: 0)
+                self.collectionView.insertItems(at: [indexPath])
+                
+            }
+            
+            
+        }) { (error) in
+            
+            print(error.localizedDescription)
         }
         
+        self.collectionView.reloadData()
         
         
-        
-    )}
+    }
     
 
    
@@ -73,10 +85,17 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return students.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as? ProfileCollectionViewCell else {return UICollectionViewCell()}
+        
+        cell.idLabel.text = students[indexPath.row].uid
+        cell.nameLabel.text = students[indexPath.row].name
+        
+        return cell
     }
 }
