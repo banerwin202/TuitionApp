@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
+    var ref : DatabaseReference!
+    var students : [Student] = []
+    
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -16,10 +22,19 @@ class ProfileViewController: UIViewController {
             
         }
     }
-    
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+              dismiss(animated: true, completion: nil)
+        } catch {
+            
+        }
+      
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
+        
    
     }
 
@@ -28,6 +43,29 @@ class ProfileViewController: UIViewController {
        
     }
     
+    func observeUsers() {
+        ref.child("Parent").childByAutoId().observe(.value) { (snapshot) in
+            print("testing")
+        }
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
+        ref.child("Parent").childByAutoId().child("Student").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
+            
+            guard let userDict = snapshot.value as? [String:Any] else {return}
+//
+//            let user =
+//        }) { (<#Error#>) in
+//            <#code#>
+        }
+        
+        
+        
+        
+    )}
+    
 
    
 
@@ -35,10 +73,10 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return students.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        return UICollectionViewCell()
     }
 }

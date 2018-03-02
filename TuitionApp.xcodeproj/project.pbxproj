@@ -10,7 +10,6 @@
 		00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDC2047D80700A4C596 /* Subject.swift */; };
 		00D9FEDF2048019000A4C596 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDE2048019000A4C596 /* Student.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
-		AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E5E3F2047E53D00B5EE13 /* Users.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52320479DC20005FE5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52220479DC20005FE5D /* ViewController.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -31,7 +30,6 @@
 		00D9FEDC2047D80700A4C596 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		00D9FEDE2048019000A4C596 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		1C112D36712946D5494F8A17 /* Pods-TuitionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.debug.xcconfig"; sourceTree = "<group>"; };
-		AA1E5E3F2047E53D00B5EE13 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AABAD52220479DC20005FE5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				00D9FEDC2047D80700A4C596 /* Subject.swift */,
 				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
 				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
-				AA1E5E3F2047E53D00B5EE13 /* Users.swift */,
 				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD52720479DC20005FE5D /* Assets.xcassets */,
 				AABAD52920479DC20005FE5D /* LaunchScreen.storyboard */,
@@ -263,7 +260,6 @@
 			files = (
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
-				AA1E5E402047E53D00B5EE13 /* Users.swift in Sources */,
 				AABAD52320479DC20005FE5D /* ViewController.swift in Sources */,
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,
 				AABAD53B2047AAF70005FE5D /* SubjectViewController.swift in Sources */,
