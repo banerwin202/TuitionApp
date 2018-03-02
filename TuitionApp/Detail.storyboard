@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x8w-PW-mf1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ci6-Fb-NHa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -118,17 +118,53 @@
             </objects>
             <point key="canvasLocation" x="3863.1999999999998" y="-54.422788605697157"/>
         </scene>
-        <!--Subject-->
+        <!--Subjects-->
         <scene sceneID="6nl-lP-T2c">
             <objects>
                 <viewController storyboardIdentifier="SubjectViewController" id="w7c-1k-IWl" customClass="SubjectViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIy-Yi-5SZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VX1-ti-1wa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="3AC-7W-B25" style="IBUITableViewCellStyleDefault" id="UkS-VR-7fY">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UkS-VR-7fY" id="7kM-8C-AZC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3AC-7W-B25">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VX1-ti-1wa" firstAttribute="leading" secondItem="s1q-kL-VAY" secondAttribute="leading" id="1vz-ys-zQg"/>
+                            <constraint firstItem="s1q-kL-VAY" firstAttribute="bottom" secondItem="VX1-ti-1wa" secondAttribute="bottom" id="S5e-sd-SBe"/>
+                            <constraint firstItem="s1q-kL-VAY" firstAttribute="trailing" secondItem="VX1-ti-1wa" secondAttribute="trailing" id="W5l-6n-qlP"/>
+                            <constraint firstItem="VX1-ti-1wa" firstAttribute="top" secondItem="s1q-kL-VAY" secondAttribute="top" id="hAx-ul-QAD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="s1q-kL-VAY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Subject" id="t3O-E5-Xm6"/>
+                    <tabBarItem key="tabBarItem" title="Subjects" id="t3O-E5-Xm6">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="VX1-ti-1wa" id="H6X-S3-5DF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U17-Jh-yKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
