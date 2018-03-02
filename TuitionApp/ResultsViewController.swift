@@ -9,6 +9,8 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
+    var selectedSubject : Subject = Subject()
 
     override func viewDidLoad() {
         super.viewDidLoad()

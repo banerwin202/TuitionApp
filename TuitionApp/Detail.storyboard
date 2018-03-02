@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x8w-PW-mf1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ooa-TZ-1kA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -198,67 +198,33 @@
             </objects>
             <point key="canvasLocation" x="3143.1999999999998" y="437.63118440779613"/>
         </scene>
-        <!--Result-->
-        <scene sceneID="4PU-qI-8aD">
-            <objects>
-                <viewController storyboardIdentifier="ResultsViewController" id="cuP-7b-R8O" customClass="ResultsViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="11b-Zz-RFc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cLF-Iy-HPd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Result" id="ntE-n6-NIK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TRs-FN-Jil" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4817" y="-387"/>
-        </scene>
         <!--Student View Controller-->
         <scene sceneID="osd-er-r6n">
             <objects>
-                <viewController id="Ooa-TZ-1kA" customClass="StudentViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentViewController" id="Ooa-TZ-1kA" customClass="StudentViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y0y-WL-jMn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ud1-LP-eZb">
-                                <rect key="frame" x="127" y="43" width="121" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ud1-LP-eZb">
+                                <rect key="frame" x="10" y="50" width="355" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Subjects"/>
+                                    <segment title="Schedule"/>
                                 </segments>
                             </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jzq-cc-D9q"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="876-sT-L65" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2222" y="-84"/>
-        </scene>
-        <!--Subjects-->
-        <scene sceneID="6nl-lP-T2c">
-            <objects>
-                <viewController storyboardIdentifier="SubjectViewController" id="w7c-1k-IWl" customClass="SubjectViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LIy-Yi-5SZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VX1-ti-1wa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQ9-mj-K4n">
+                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="3AC-7W-B25" style="IBUITableViewCellStyleDefault" id="UkS-VR-7fY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="iZg-aC-L2d" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Lyo-Vk-ldC">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UkS-VR-7fY" id="7kM-8C-AZC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lyo-Vk-ldC" id="nqz-4j-9yj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3AC-7W-B25">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iZg-aC-L2d">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -273,23 +239,38 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VX1-ti-1wa" firstAttribute="leading" secondItem="s1q-kL-VAY" secondAttribute="leading" id="1vz-ys-zQg"/>
-                            <constraint firstItem="s1q-kL-VAY" firstAttribute="bottom" secondItem="VX1-ti-1wa" secondAttribute="bottom" id="S5e-sd-SBe"/>
-                            <constraint firstItem="s1q-kL-VAY" firstAttribute="trailing" secondItem="VX1-ti-1wa" secondAttribute="trailing" id="W5l-6n-qlP"/>
-                            <constraint firstItem="VX1-ti-1wa" firstAttribute="top" secondItem="s1q-kL-VAY" secondAttribute="top" id="hAx-ul-QAD"/>
+                            <constraint firstItem="ud1-LP-eZb" firstAttribute="leading" secondItem="jzq-cc-D9q" secondAttribute="leading" constant="10" id="Mta-Wm-BvT"/>
+                            <constraint firstItem="ud1-LP-eZb" firstAttribute="top" secondItem="jzq-cc-D9q" secondAttribute="top" constant="30" id="Ufl-xX-KtZ"/>
+                            <constraint firstItem="oQ9-mj-K4n" firstAttribute="top" secondItem="ud1-LP-eZb" secondAttribute="bottom" constant="10" id="WIP-kF-0fl"/>
+                            <constraint firstItem="oQ9-mj-K4n" firstAttribute="bottom" secondItem="jzq-cc-D9q" secondAttribute="bottom" id="YIU-Nn-Rte"/>
+                            <constraint firstItem="oQ9-mj-K4n" firstAttribute="trailing" secondItem="jzq-cc-D9q" secondAttribute="trailing" id="c3d-9g-yP0"/>
+                            <constraint firstItem="oQ9-mj-K4n" firstAttribute="leading" secondItem="jzq-cc-D9q" secondAttribute="leading" id="cft-yT-gCk"/>
+                            <constraint firstItem="jzq-cc-D9q" firstAttribute="trailing" secondItem="ud1-LP-eZb" secondAttribute="trailing" constant="10" id="zIU-Dl-CdK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="s1q-kL-VAY"/>
+                        <viewLayoutGuide key="safeArea" id="jzq-cc-D9q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Subjects" id="t3O-E5-Xm6">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
                     <connections>
-                        <outlet property="tableView" destination="VX1-ti-1wa" id="H6X-S3-5DF"/>
+                        <outlet property="tableView" destination="oQ9-mj-K4n" id="Lya-ii-rUA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U17-Jh-yKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="876-sT-L65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3143" y="-420"/>
+            <point key="canvasLocation" x="2221.5999999999999" y="-84.107946026986511"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="NZm-dY-exY">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="Ls4-90-6ke" customClass="ResultsViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uUk-BA-Ffh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Yhe-7s-jmw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZy-jQ-d0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3166" y="-324"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="79Q-ku-Bgy">
