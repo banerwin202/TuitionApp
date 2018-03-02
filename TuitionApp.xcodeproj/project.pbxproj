@@ -27,6 +27,7 @@
 		AABAD53D2047AB050005FE5D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */; };
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
+		AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +52,8 @@
 		AABAD53A2047AAF70005FE5D /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		AABAD5402047AB180005FE5D /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		AACDB9A9204949E7003B0E45 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuitionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32D36A3EE713C044BB1E531 /* Pods-TuitionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,10 +114,10 @@
 				4E7641602047B9970051D42E /* SignUpViewController.swift */,
 				4EF5AFCC2049185D005BD48E /* SignInViewController.swift */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
+				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
 				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
 				AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */,
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
-				AABAD5402047AB180005FE5D /* AttendanceViewController.swift */,
 				AABAD53A2047AAF70005FE5D /* SubjectViewController.swift */,
 				4EF5AFC820490C86005BD48E /* Parents.swift */,
 				00D9FEDE2048019000A4C596 /* Student.swift */,
@@ -271,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
 				4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */,

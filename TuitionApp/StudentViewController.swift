@@ -1,14 +1,14 @@
 //
-//  AttendanceViewController.swift
+//  StudentViewController.swift
 //  TuitionApp
 //
-//  Created by Ban Er Win on 01/03/2018.
+//  Created by Ban Er Win on 02/03/2018.
 //  Copyright © 2018 Ban Er Win. All rights reserved.
 //
 
 import UIKit
 
-class AttendanceViewController: UIViewController {
+class StudentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
