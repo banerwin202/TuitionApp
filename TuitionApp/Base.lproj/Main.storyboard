@@ -13,7 +13,7 @@
         <!--Parent Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,9 +98,9 @@
                     <tabBarItem key="tabBarItem" title="Parent Sign In" id="Cf4-Rz-zYr"/>
                     <navigationItem key="navigationItem" id="hza-CI-l6h"/>
                     <connections>
-                        <outlet property="emailTextField" destination="KMH-8B-de0" id="ynl-qv-CQd"/>
-                        <outlet property="loginButton" destination="Js6-fC-gCj" id="Dde-Cg-8yt"/>
-                        <outlet property="passwordTextField" destination="mcA-5u-N7w" id="ned-SE-nJt"/>
+                        <outlet property="emailTextField" destination="KMH-8B-de0" id="weK-wV-Hfg"/>
+                        <outlet property="passwordTextField" destination="mcA-5u-N7w" id="npa-S4-S2f"/>
+                        <outlet property="signInButton" destination="Js6-fC-gCj" id="Tsm-qe-tTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
