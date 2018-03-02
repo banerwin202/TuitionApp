@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDC2047D80700A4C596 /* Subject.swift */; };
 		00D9FEDF2048019000A4C596 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDE2048019000A4C596 /* Student.swift */; };
+		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52320479DC20005FE5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52220479DC20005FE5D /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		00D9FEDC2047D80700A4C596 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		00D9FEDE2048019000A4C596 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		00D9FEE020480D4000A4C596 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1C112D36712946D5494F8A17 /* Pods-TuitionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				AABAD52220479DC20005FE5D /* ViewController.swift */,
 				AABAD52420479DC20005FE5D /* Main.storyboard */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
+				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
 				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */,
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
@@ -203,6 +206,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -210,6 +214,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -268,6 +273,7 @@
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
+				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
 				AABAD5412047AB180005FE5D /* AttendanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
