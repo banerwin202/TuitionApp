@@ -24,7 +24,7 @@ class Student {
         self.name = dict["name"] as? String ?? "No Name"
         self.url = dict["profilePicUrl"] as? String ?? "No Url"
    
+        self.results = dict["result"] as? String ?? "No Result"
     }
-
 
 }

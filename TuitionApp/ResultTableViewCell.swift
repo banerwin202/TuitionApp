@@ -10,6 +10,12 @@ import UIKit
 
 class ResultTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var TestLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var testDateLabel: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var resultImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
