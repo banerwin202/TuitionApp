@@ -25,7 +25,6 @@
 		AABAD5352047A81B0005FE5D /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD5342047A81B0005FE5D /* Detail.storyboard */; };
 		AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */; };
 		AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5382047AADE0005FE5D /* NotificationViewController.swift */; };
-		AABAD53D2047AB050005FE5D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */; };
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
 		AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
@@ -52,7 +51,6 @@
 		AABAD5342047A81B0005FE5D /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AABAD5382047AADE0005FE5D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		AACDB9A9204949E7003B0E45 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
 				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
 				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
-				AABAD53C2047AB050005FE5D /* ScheduleViewController.swift */,
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
 				4EF5AFC820490C86005BD48E /* Parents.swift */,
 				00D9FEDE2048019000A4C596 /* Student.swift */,
@@ -281,7 +278,6 @@
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
 				4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */,
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,
-				AABAD53D2047AB050005FE5D /* ScheduleViewController.swift in Sources */,
 				AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */,
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
