@@ -13,4 +13,8 @@ pod 'Firebase/Storage'
 
 pod 'JTAppleCalendar', '~> 7.0'
 
+# Pods for PieChart
+pod 'SwiftCharts', '~> 0.6.1'
+pod 'PieCharts'
+
 end

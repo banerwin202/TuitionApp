@@ -17,6 +17,10 @@ class ResultsViewController: UIViewController {
         didSet {
             tableView.dataSource = self
 //            tableView.rowHeight = tableView.frame.height
+//            tableView.rowHeight = 180
+            tableView.rowHeight = UITableViewAutomaticDimension
+//            tableView.estimatedRowHeight = 165
+            
         }
     }
     
@@ -81,7 +85,15 @@ extension ResultsViewController : UITableViewDataSource {
         cell.scoreLabel.text = String(result.score)
         cell.testDateLabel.text = result.Date
         cell.TestLabel.text = result.testName
-        
+        cell.commentTextView.text = result.comment
         return cell
     }
+
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        self.tableView.estimatedRowHeight = 80
+//        return UITableViewAutomaticDimension
+//    }
 }
+
+

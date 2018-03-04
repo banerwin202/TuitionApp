@@ -14,6 +14,7 @@ class Result {
     var testName : String = ""
     var Date : String = ""
     var scoreImageURL : String = ""
+    var comment : String = ""
     
     init() {
         
@@ -24,6 +25,7 @@ class Result {
         self.score = userDict["Score"] as? Int ?? 0
         self.testName = userDict["TestName"] as? String ?? "No Test"
         self.Date = userDict["Date"] as? String ?? "No Date"
+        self.comment = userDict["Comment"] as? String ?? "Congratz~! Your kid did very well !!"
     }
     
     static var currentUser : Parent?
