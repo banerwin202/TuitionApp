@@ -62,20 +62,6 @@ class StudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            let serverObjects = self.getServerEvents()
-            
-            for (date, event) in serverObjects {
-                let stringDate = self.formatter.string(from: date)
-                self.eventsFromTheServer[stringDate] = event
-            }
-            
-            DispatchQueue.main.async {
-                self.calendarView.reloadData()
-            }
-            
-        }
-        
         ref = Database.database().reference()
         
         getSubjectName()
@@ -84,6 +70,19 @@ class StudentViewController: UIViewController {
         calendarView.scrollToDate(Date(), animateScroll: false)
         calendarView.selectDates([Date()])
         
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            self.loadDetail(completion: { (eventDict) in
+                
+                for (date, event) in eventDict {
+                    let stringDate = self.formatter.string(from: date)
+                    self.eventsFromTheServer[stringDate] = event
+                }
+                
+                DispatchQueue.main.async {
+                    self.calendarView.reloadData()
+                }
+            })
+        }
     }
     
     func handleCellEvents(view: JTAppleCell?, cellState: CellState) {
@@ -328,16 +327,45 @@ extension UIColor {
 }
 
 extension StudentViewController {
-    func getServerEvents() -> [Date:String] {
-        formatter.dateFormat = "yyyy MM dd"
+//    func getServerEvents() -> [Date:String] {
+//        formatter.dateFormat = "yyyy MM dd"
+//
+//        return [
+//            formatter.date(from: "2018 03 01")! : "Happy Birthday",
+//            formatter.date(from: "2018 03 02")! : "Test Event"
+//        ]
+//
+//
+//
+//    }
+    
+    func loadDetail(completion: @escaping ([Date:String]) -> Void) {
         
-        return [
-            formatter.date(from: "2018 03 01")! : "Happy Birthday",
-            formatter.date(from: "2018 03 02")! : "Test Event"
-        ]
+        var eventDict : [Date:String] = [:]
         
-        
-        
+        ref.child("Tuition").child("Subject").observe(.childAdded) { (snapshot) in
+            let key = snapshot.key
+            
+                self.ref.child("Tuition").child("Subject").child(key).observe(.childAdded, with: { (dataSnapshot) in
+                    
+                    self.formatter.dateFormat = "yyyy MM dd"
+                    
+                    if let value = dataSnapshot.value as? String,
+                        let date = self.formatter.date(from: dataSnapshot.key) {
+                        //might have issue if multiple events on same date (set uid?)
+                        eventDict[date] = value
+                        
+                        
+                        completion(eventDict)
+
+                    }
+
+                    
+                })
+
+            
+        }
+
     }
     
     
