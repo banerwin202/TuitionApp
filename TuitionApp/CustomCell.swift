@@ -13,6 +13,14 @@ class CustomCell: JTAppleCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var selectedView: UIView!
     @IBOutlet weak var eventDotView: UIImageView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        dateLabel.text = ""
+        selectedView.isHidden = true
+        eventDotView.isHidden = true
+    }
 
     
 }
