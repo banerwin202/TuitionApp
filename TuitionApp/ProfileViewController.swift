@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-//            collectionView.dataSource = self
+          collectionView.dataSource = self
             
         }
     }
@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         observeUsers()
+       
         
    
     }
@@ -45,16 +46,21 @@ class ProfileViewController: UIViewController {
     }
     
     func observeUsers() {
-        ref.child("Parent").childByAutoId().observe(.value) { (snapshot) in
+//        ref.child("Tuition").childByAutoId().observe(.value) { (snapshot) in
+//
+//            print("testing")
+//        }
+//
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
+        
+        let parent = Auth.auth().currentUser
+        if let parent = parent {
+            let parentID = parent.uid
             
-            print("testing")
-        }
         
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
-        
-        ref.child("Parent").childByAutoId().child("Student").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
+        ref.child("Tuition").child("Parent").child(parentID).child("Student").observe(.childAdded, with: { (snapshot) in
             
             guard let userDict = snapshot.value as? [String:Any] else {return}
 
@@ -75,7 +81,7 @@ class ProfileViewController: UIViewController {
         
         self.collectionView.reloadData()
         
-        
+        }
     }
     
 
