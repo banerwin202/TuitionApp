@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="239" id="3MC-y5-15N"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-8B-de0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL ADDRESS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-8B-de0">
                                 <rect key="frame" x="20" y="403" width="335" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aAH-6Y-dQf"/>
@@ -184,24 +184,24 @@
         <!--TC Sign In-->
         <scene sceneID="diJ-Y5-VXl">
             <objects>
-                <viewController storyboardIdentifier="tuitionSignInViewController" id="q48-ad-uUM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuitionSignInViewController" id="q48-ad-uUM" customClass="TCSignInViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5eS-Ne-Rlz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-zw-mzh">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL ADDRESS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-zw-mzh">
                                 <rect key="frame" x="131" y="171" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKH-zw-ayX">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKH-zw-ayX">
                                 <rect key="frame" x="131" y="209" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OuR-Ai-5HI">
                                 <rect key="frame" x="86" y="378" width="159.5" height="24"/>
@@ -228,68 +228,86 @@
                         <viewLayoutGuide key="safeArea" id="1Gf-i2-o5l"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TC Sign In" id="C1L-HM-Jn8"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="CVa-zw-mzh" id="m36-id-RX5"/>
+                        <outlet property="passwordTextField" destination="zKH-zw-ayX" id="r8m-Zi-fXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQh-QJ-QQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="735" y="836"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="dOm-Me-ES5">
             <objects>
-                <viewController storyboardIdentifier="tuitionSignUpViewController" id="N9N-VG-kJa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuitionSignUpViewController" id="N9N-VG-kJa" customClass="TCSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vnf-Sw-aqL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-hc-kiK">
-                                <rect key="frame" x="104" y="211" width="166" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-hc-kiK">
+                                <rect key="frame" x="20" y="134" width="335" height="170"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpN-dP-cta">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpN-dP-cta">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osB-fz-KO4">
-                                        <rect key="frame" x="0.0" y="35" width="166" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osB-fz-KO4">
+                                        <rect key="frame" x="0.0" y="35" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CONTACT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-fy-isy">
-                                        <rect key="frame" x="0.0" y="70" width="166" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CONTACT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-fy-isy">
+                                        <rect key="frame" x="0.0" y="70" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-j5-t1c">
-                                        <rect key="frame" x="0.0" y="105" width="166" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-j5-t1c">
+                                        <rect key="frame" x="0.0" y="105" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CONFIRM PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgH-OE-pD2">
-                                        <rect key="frame" x="0.0" y="140" width="166" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CONFIRM PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgH-OE-pD2">
+                                        <rect key="frame" x="0.0" y="140" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-jW-szx">
-                                <rect key="frame" x="160" y="440" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-jW-szx">
+                                <rect key="frame" x="160" y="364" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="N9N-VG-kJa" eventType="touchUpInside" id="sU4-F6-dRU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OBE-GP-36T" firstAttribute="trailing" secondItem="sAe-hc-kiK" secondAttribute="trailing" constant="20" id="D13-ZO-NrD"/>
+                            <constraint firstItem="hSX-jW-szx" firstAttribute="top" secondItem="sAe-hc-kiK" secondAttribute="bottom" constant="60" id="Erg-7i-eV5"/>
+                            <constraint firstItem="sAe-hc-kiK" firstAttribute="top" secondItem="OBE-GP-36T" secondAttribute="top" constant="70" id="GhI-QU-JOu"/>
+                            <constraint firstItem="sAe-hc-kiK" firstAttribute="leading" secondItem="OBE-GP-36T" secondAttribute="leading" constant="20" id="XhD-cv-2Aq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OBE-GP-36T"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="WgH-OE-pD2" id="nez-bc-wFh"/>
+                        <outlet property="contactTextField" destination="Af8-fy-isy" id="6Za-Pt-wTX"/>
+                        <outlet property="emailTextField" destination="osB-fz-KO4" id="jjh-e3-XGf"/>
+                        <outlet property="passwordTextField" destination="a9q-j5-t1c" id="uV4-75-fJ9"/>
+                        <outlet property="usernameTextField" destination="CpN-dP-cta" id="FiQ-s7-oxm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXd-d2-EtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5999999999999" y="835.23238380809596"/>
+            <point key="canvasLocation" x="1741.5999999999999" y="834.33283358320841"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ENn-X5-30c">
