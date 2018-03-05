@@ -26,6 +26,7 @@ class ResultsViewController: UIViewController {
     
     var selectedSubject : Subject = Subject()
     var results : [Result] = []
+    var selectedStudent : Student = Student()
   
 
     var ref : DatabaseReference!

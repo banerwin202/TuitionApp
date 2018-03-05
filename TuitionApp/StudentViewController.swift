@@ -234,6 +234,7 @@ extension StudentViewController : UITableViewDataSource, UITableViewDelegate {
         guard let vc = sb.instantiateViewController(withIdentifier: "ResultsViewController") as? ResultsViewController else {return}
         
         vc.selectedSubject = subjects[indexPath.row]
+        vc.selectedStudent = selectedStudent
         navigationController?.pushViewController(vc, animated: true)
     }
     
