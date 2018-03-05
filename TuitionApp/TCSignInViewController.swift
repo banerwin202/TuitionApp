@@ -16,6 +16,12 @@ class TCSignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signInButton: UIButton! {
+        didSet {
+            signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +48,7 @@ class TCSignInViewController: UIViewController {
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                guard let navVC = sb.instantiateViewController(withIdentifier: "StudentSignUpViewController") as? StudentSignUpViewController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
                 self.present(navVC, animated: true, completion: nil)
                 
             }
