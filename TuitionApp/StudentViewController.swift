@@ -16,6 +16,7 @@ class StudentViewController: UIViewController {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         }
     }
     
@@ -25,21 +26,38 @@ class StudentViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var calendarTableView: UITableView! {
+        didSet {
+            calendarTableView.dataSource = self
+            calendarTableView.register(UITableViewCell.self, forCellReuseIdentifier: "calendarCell")
+            calendarTableView.rowHeight = 40
+        }
+    }
+    
+    
     var subjects : [Subject] = []
+    
+    var eventArray : [String] = []
     
     var ref : DatabaseReference!
     
     let formatter = DateFormatter()
     
+//    var eventChecker : Bool = false
+    
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month : UILabel!
-
+    
     
     let outsideMonthColor = UIColor(colorWithHexValue: 0x5CCBEF)
     let monthColor = UIColor(colorWithHexValue: 0xEFFDFE)
     let selectedMonthColor = UIColor(colorWithHexValue: 0x5ACBEF)
     let currentDateSelectedViewColor = UIColor(colorWithHexValue: 0x9AF5F7)
+    
+    let todaysDate = Date()
+    
+    var eventsFromTheServer : [String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +66,45 @@ class StudentViewController: UIViewController {
         
         getSubjectName()
         setUpCalendarView()
-
+        
+        calendarView.scrollToDate(Date(), animateScroll: false)
+        calendarView.selectDates([Date()])
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            self.loadDetail(completion: { (eventDict) in
+                
+                for (date, event) in eventDict {
+                    let stringDate = self.formatter.string(from: date)
+                    self.eventsFromTheServer[stringDate] = event
+                }
+                
+                DispatchQueue.main.async {
+                    self.calendarView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func handleCellEvents(view: JTAppleCell?, cellState: CellState) {
+        guard let validCell = view as? CustomCell else {return}
+        
+        validCell.eventDotView.isHidden = !eventsFromTheServer.contains{ $0.key == formatter.string(from: cellState.date)}
     }
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else {return}
+        
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let todaysDateString = formatter.string(from: todaysDate)
+        let monthDateString = formatter.string(from: cellState.date)
+        
+        
+        if todaysDateString == monthDateString {
+            validCell.dateLabel.textColor = UIColor.blue
+        } else {
+            validCell.dateLabel.textColor = UIColor.white
+        }
         
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
@@ -134,16 +186,43 @@ class StudentViewController: UIViewController {
 extension StudentViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
+        var count : Int?
+        
+        if tableView == self.tableView {
+            count = subjects.count
+        }
+        
+        if tableView == self.calendarTableView {
+            count = eventsFromTheServer.count
+        }
+        
+        return count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell : UITableViewCell?
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if tableView == self.tableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            
+            cell?.textLabel?.text = subjects[indexPath.row].name
+        }
         
-        cell.textLabel?.text = subjects[indexPath.row].name
-        
-        return cell
+        if tableView == self.calendarTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell", for: indexPath)
+            
+            for event in eventsFromTheServer.values {
+                eventArray.append(event)
+            }
+            
+//            if eventChecker == true {
+                cell?.textLabel?.text = eventArray[indexPath.row]
+//            } else {
+//                cell?.textLabel?.text = ""
+//            }
+            
+        }
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -187,6 +266,7 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
         
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        handleCellEvents(view: cell, cellState: cellState)
         
         return cell
     }
@@ -199,16 +279,34 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         
+        guard let validCell = cell as? CustomCell else {return}
+        
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-
+        handleCellEvents(view: cell, cellState: cellState)
+        
+//        eventsFromTheServer.contains(where: { $0.key == formatter.string(from: cellState.date)})
+        
+        if !validCell.eventDotView.isHidden {
+//            self.eventChecker = true
+            calendarTableView.rowHeight = 40
+            calendarTableView.reloadData()
+        } else {
+            calendarTableView.rowHeight = 0
+            calendarTableView.reloadData()
+        }
+        
+        calendarTableView.reloadData()
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-
+        handleCellEvents(view: cell, cellState: cellState)
+        
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -227,3 +325,49 @@ extension UIColor {
         )
     }
 }
+
+extension StudentViewController {
+//    func getServerEvents() -> [Date:String] {
+//        formatter.dateFormat = "yyyy MM dd"
+//
+//        return [
+//            formatter.date(from: "2018 03 01")! : "Happy Birthday",
+//            formatter.date(from: "2018 03 02")! : "Test Event"
+//        ]
+//
+//
+//
+//    }
+    
+    func loadDetail(completion: @escaping ([Date:String]) -> Void) {
+        
+        var eventDict : [Date:String] = [:]
+        
+        ref.child("Tuition").child("Subject").observe(.childAdded) { (snapshot) in
+            let key = snapshot.key
+            
+                self.ref.child("Tuition").child("Subject").child(key).observe(.childAdded, with: { (dataSnapshot) in
+                    
+                    self.formatter.dateFormat = "yyyy MM dd"
+                    
+                    if let value = dataSnapshot.value as? String,
+                        let date = self.formatter.date(from: dataSnapshot.key) {
+                        //might have issue if multiple events on same date (set uid?)
+                        eventDict[date] = value
+                        
+                        
+                        completion(eventDict)
+
+                    }
+
+                    
+                })
+
+            
+        }
+
+    }
+    
+    
+}
+
