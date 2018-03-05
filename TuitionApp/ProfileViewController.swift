@@ -85,9 +85,27 @@ class ProfileViewController: UIViewController {
         }
     }
     
-
-   
-
+    func renderImage(_ urlString: String, cellImageView: UIImageView) {
+        
+        guard let url = URL.init(string: urlString) else {return}
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let validError = error {
+                print(validError.localizedDescription)
+            }
+            
+            if let validData = data {
+                let image = UIImage(data: validData)
+                
+                DispatchQueue.main.async {
+                    cellImageView.image = image
+                }
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 extension ProfileViewController : UICollectionViewDataSource {
@@ -99,6 +117,11 @@ extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as? ProfileCollectionViewCell else {return UICollectionViewCell()}
+        
+        let url = students[indexPath.row].url
+        if let a = cell.imageView {
+            renderImage(url, cellImageView: a)
+        }
         
         cell.idLabel.text = students[indexPath.row].uid
         cell.nameLabel.text = students[indexPath.row].name
