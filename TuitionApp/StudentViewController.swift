@@ -295,6 +295,8 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
         
         guard let validCell = cell as? CustomCell else {return}
         
+        validCell.bounce()
+        
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
@@ -422,5 +424,15 @@ extension StudentViewController {
         }
     }
     
+}
+
+extension UIView {
+    func bounce() {
+        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+            self.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+    }
 }
 
