@@ -9,6 +9,7 @@
 import Foundation
 
 class Student {
+    
     var age : Int = 0
     var name : String = ""
     var subjects : [Subject] = []
@@ -16,6 +17,10 @@ class Student {
     var uid : String = ""
     var imageURL : String = ""
     var url : String = ""
+    
+    init() {
+        
+    }
     
     init(uid: String, dict: [String:Any]) {
         

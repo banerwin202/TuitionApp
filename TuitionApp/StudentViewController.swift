@@ -27,6 +27,8 @@ class StudentViewController: UIViewController {
     
     var subjects : [Subject] = []
     
+    var selectedStudent : Student = Student()
+    
     var ref : DatabaseReference!
     
     let formatter = DateFormatter()
