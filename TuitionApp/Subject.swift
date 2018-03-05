@@ -12,9 +12,15 @@ class Subject {
     var name : String = ""
     var schedule : Schedule!
     
+    init() {
+        
+    }
+    
     init(name: String) {
         self.name = name
     }
+    
+    
 }
 
 class Schedule {
