@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
           collectionView.dataSource = self
+          collectionView.delegate = self
             
         }
     }
@@ -106,3 +107,18 @@ extension ProfileViewController : UICollectionViewDataSource {
     }
 }
 
+extension ProfileViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "StudentViewController") as? StudentViewController else {return}
+        
+          let student = students[indexPath.row]
+       
+            vc.selectedStudent = student
+        
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+}
