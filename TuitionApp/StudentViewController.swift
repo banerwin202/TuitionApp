@@ -39,6 +39,8 @@ class StudentViewController: UIViewController {
     
     var eventArray : [String] = []
     
+    var selectedStudent : Student = Student()
+    
     var ref : DatabaseReference!
     
     let formatter = DateFormatter()

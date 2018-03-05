@@ -26,6 +26,7 @@ class ResultsViewController: UIViewController {
     
     var selectedSubject : Subject = Subject()
     var results : [Result] = []
+  
 
     var ref : DatabaseReference!
     override func viewDidLoad() {
