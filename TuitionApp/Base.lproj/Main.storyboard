@@ -261,7 +261,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="dOm-Me-ES5">
             <objects>
-                <viewController storyboardIdentifier="tuitionSignUpViewController" id="N9N-VG-kJa" customClass="TCSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TCSignUpViewController" id="N9N-VG-kJa" customClass="TCSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vnf-Sw-aqL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +301,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-jW-szx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSX-jW-szx">
                                 <rect key="frame" x="160" y="364" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -315,6 +315,7 @@
                             <constraint firstItem="hSX-jW-szx" firstAttribute="top" secondItem="sAe-hc-kiK" secondAttribute="bottom" constant="60" id="Erg-7i-eV5"/>
                             <constraint firstItem="sAe-hc-kiK" firstAttribute="top" secondItem="OBE-GP-36T" secondAttribute="top" constant="70" id="GhI-QU-JOu"/>
                             <constraint firstItem="sAe-hc-kiK" firstAttribute="leading" secondItem="OBE-GP-36T" secondAttribute="leading" constant="20" id="XhD-cv-2Aq"/>
+                            <constraint firstItem="hSX-jW-szx" firstAttribute="centerX" secondItem="Vnf-Sw-aqL" secondAttribute="centerX" id="a0U-wK-Z3E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OBE-GP-36T"/>
                     </view>

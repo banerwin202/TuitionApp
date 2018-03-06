@@ -24,19 +24,14 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentAgeTextField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
-//    @IBOutlet weak var subjectPickerView: UIPickerView!
-//    @IBOutlet weak var subjectSelected: UILabel!
     
     var ref : DatabaseReference!
     let imagePicker = UIImagePickerController()
-//    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-//        subjectPickerView.dataSource = self
-//        subjectPickerView.delegate = self
 //        createAlertView()
         ref = Database.database().reference()
     }
@@ -44,9 +39,6 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
     @IBAction func createStudentButtonTapped(_ sender: Any) {
         signUpUser()
     }
-    
-
-    
     
     @objc func findImageButtonTapped(_ sender: Any) {
         imagePicker.allowsEditing = false
@@ -68,12 +60,6 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
         let newStudent : [String : Any] = ["StudentName" : studentName, "StudentAge" : studentAge]
         
         self.ref.child("Tuition").child("Student").child(studentID).setValue(newStudent)
-        
-//        let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
-//        guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
-//        self.navigationController?.popViewController(animated: false)
-//        self.present(vc, animated: false, completion: nil)
-        
     }
 
     func uploadToStorage(_ image: UIImage) {
@@ -142,23 +128,3 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
 
 
 }
-
-//extension StudentSignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return subject.count
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return subject[row]
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        subjectSelected.text = subject[row]
-//    }
-//
-//}
-
