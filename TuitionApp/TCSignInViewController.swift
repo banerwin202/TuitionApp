@@ -22,8 +22,12 @@ class TCSignInViewController: UIViewController {
         }
     }
     
+    var ref : DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
         
     }
     
@@ -39,20 +43,69 @@ class TCSignInViewController: UIViewController {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else {return}
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let validError = error {
-                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
-            }
+//        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
+//
+//            if snapshot.hasChildren() {
+//
+//
+//        }
+//
+//        }
+        
+//        Auth.auth().fetchProviders(forEmail: email) { (providers, error) in
+//            if let validError = error {
+//                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+//            }
+//
+//            if let validProviders = providers {
+//                self.showAlert(withTitle: "Success", message: validProviders.joined(separator: ", "))
+//            }
+//
+//
+//        }
+        
+        ref.child("Tuition Centre").observe(.value) { (snapshot) in
             
-            if user != nil {
-                self.emailTextField.text = ""
-                self.passwordTextField.text = ""
-                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
-                self.present(navVC, animated: true, completion: nil)
+            
+            
+            if let dict = snapshot.value as? [String:Any] {
+                
+                for id in dict {
+                    if let idValues = id.value as? [String:Any],
+                        let emailValue = idValues["Email"] as? String {
+                        
+                        if email == emailValue {
+                            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                                if let validError = error {
+                                    self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+                                }
+                                
+                                if user != nil {
+                                    self.emailTextField.text = ""
+                                    self.passwordTextField.text = ""
+                                    let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                                    self.present(navVC, animated: true, completion: nil)
+                                    
+                                }
+                            }
+                        } else {
+                            self.showAlert(withTitle: "Error", message: "Must be an existing tuition account holder")
+                        }
+                    }
+                    
+                }
+                
+                
                 
             }
+            
+//            if snapshot
+            
         }
+//         == email
+        
+        
         
     }
     
