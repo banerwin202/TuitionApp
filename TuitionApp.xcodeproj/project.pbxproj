@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C48B79204E969A00FE26F2 /* TCProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */; };
 		00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDC2047D80700A4C596 /* Subject.swift */; };
 		00D9FEDF2048019000A4C596 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDE2048019000A4C596 /* Student.swift */; };
 		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		00D9FEDC2047D80700A4C596 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		00D9FEDE2048019000A4C596 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		00D9FEE020480D4000A4C596 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
 				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */,
 				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
 				AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */,
 			);
@@ -356,6 +359,7 @@
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
 				4EF5AFC920490C86005BD48E /* Parents.swift in Sources */,
+				00C48B79204E969A00FE26F2 /* TCProfileCollectionViewCell.swift in Sources */,
 				AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */,
 				4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
