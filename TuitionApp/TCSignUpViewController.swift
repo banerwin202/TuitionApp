@@ -27,7 +27,7 @@ class TCSignUpViewController: UIViewController {
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        
+        signUpUser()
     }
     
     func signUpUser() {
@@ -66,7 +66,7 @@ class TCSignUpViewController: UIViewController {
                     
                     let userPost: [String:Any] = ["Username": userName, "Email": email, "Contact":contact]
                     
-                    self.ref.child("Tuition Center").child(validUser.uid).setValue(userPost)
+                    self.ref.child("Tuition Centre").child(validUser.uid).setValue(userPost)
                     let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
                     guard let navVC = sb.instantiateViewController(withIdentifier: "StudentSignUpViewController") as? StudentSignUpViewController else {return}
                     self.present(navVC, animated: true, completion: nil)

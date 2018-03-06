@@ -12,15 +12,51 @@ class AddSubjectViewController: UIViewController {
 
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var subjectPickerView: UIPickerView!
-    @IBOutlet weak var addSubjectButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        subjectPickerView.dataSource = self
+        subjectPickerView.delegate = self
     }
 
+    @IBAction func addSubjectButtonTapped(_ sender: Any) {
+        
+    }
+    
+}
 
+extension AddSubjectViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return subject.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return subject[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        subjectSelected.text = subject[row]
+    }
+
+}
+
+extension AddSubjectViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel
+        return cell
+    }
+    
 }

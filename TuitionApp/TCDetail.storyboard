@@ -13,7 +13,7 @@
         <!--Student Sign Up View Controller-->
         <scene sceneID="AOt-da-LAd">
             <objects>
-                <viewController id="a34-60-JAz" customClass="StudentSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentSignUpViewController" id="a34-60-JAz" customClass="StudentSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrc-cv-V44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
         <!--Profile View Controller-->
         <scene sceneID="bli-N4-KAL">
             <objects>
-                <viewController id="DMZ-jR-z0U" customClass="TCProfileViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TCProfileViewController" id="DMZ-jR-z0U" customClass="TCProfileViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pxE-Wh-EUa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,6 +183,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLQ-VT-mDO">
                                 <rect key="frame" x="143" y="261" width="88" height="30"/>
                                 <state key="normal" title="Add Subject "/>
+                                <connections>
+                                    <action selector="addSubjectButtonTapped:" destination="zUL-iS-aa7" eventType="touchUpInside" id="Qse-kN-caE"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R60-bK-UtD">
                                 <rect key="frame" x="0.0" y="331" width="375" height="336"/>
