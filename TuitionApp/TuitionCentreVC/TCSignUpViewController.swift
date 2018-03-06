@@ -68,7 +68,7 @@ class TCSignUpViewController: UIViewController {
                     
                     self.ref.child("Tuition Centre").child(validUser.uid).setValue(userPost)
                     let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                    guard let navVC = sb.instantiateViewController(withIdentifier: "TTCNavigationController") as? UINavigationController else {return}
+                    guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
                     self.present(navVC, animated: true, completion: nil)
                     print("sign up method successful")
                 }

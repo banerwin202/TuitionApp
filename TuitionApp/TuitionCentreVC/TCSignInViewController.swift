@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class TCSignInViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -40,33 +40,12 @@ class TCSignInViewController: UIViewController {
     }
     
     @objc func signInButtonTapped() {
+        var userIsTuitionCheck : Bool = false
+        
         guard let email = emailTextField.text,
             let password = passwordTextField.text else {return}
         
-//        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
-//
-//            if snapshot.hasChildren() {
-//
-//
-//        }
-//
-//        }
-        
-//        Auth.auth().fetchProviders(forEmail: email) { (providers, error) in
-//            if let validError = error {
-//                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
-//            }
-//
-//            if let validProviders = providers {
-//                self.showAlert(withTitle: "Success", message: validProviders.joined(separator: ", "))
-//            }
-//
-//
-//        }
-        
         ref.child("Tuition Centre").observe(.value) { (snapshot) in
-            
-            
             
             if let dict = snapshot.value as? [String:Any] {
                 
@@ -75,9 +54,11 @@ class TCSignInViewController: UIViewController {
                         let emailValue = idValues["Email"] as? String {
                         
                         if email == emailValue {
+                            userIsTuitionCheck = true
                             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                                 if let validError = error {
                                     self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+                                    
                                 }
                                 
                                 if user != nil {
@@ -89,24 +70,15 @@ class TCSignInViewController: UIViewController {
                                     
                                 }
                             }
-                        } else {
-                            self.showAlert(withTitle: "Error", message: "Must be an existing tuition account holder")
                         }
                     }
-                    
                 }
                 
-                
-                
+                if userIsTuitionCheck == false {
+                    self.showAlert(withTitle: "Error", message: "Please sign in with existing tuition centre account")
+                }
             }
-            
-//            if snapshot
-            
         }
-//         == email
-        
-        
-        
     }
     
 }
