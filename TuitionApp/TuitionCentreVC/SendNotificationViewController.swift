@@ -8,10 +8,16 @@
 
 import UIKit
 import UserNotifications
+import FirebaseDatabase
+import FirebaseAuth
+
+
 
 class SendNotificationViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
+    
+    var ref: DatabaseReference!
     
     @IBAction func sendBtnTapped(_ sender: Any) {
         
@@ -26,9 +32,12 @@ class SendNotificationViewController: UIViewController {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
+        addNotification()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
 
     }
 
@@ -37,7 +46,21 @@ class SendNotificationViewController: UIViewController {
        
     }
     
+    func addNotification() {
+      guard let title = titleTextField.text,
+        let text = textView.text else {return}
+        
+        let tuitionCenter = Auth.auth().currentUser
+        if let tuitionCenter = tuitionCenter {
+            let tuitionID = tuitionCenter.uid
+        
+        let userPost: [String:Any] = ["title" : title, "text" : text]
+        
+        self.ref.child("Tuition Centre").child(tuitionID).child("notification").setValue(userPost)
+            
+            
+    }
 
-
+ }
 
 }

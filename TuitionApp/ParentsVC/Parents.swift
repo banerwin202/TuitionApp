@@ -13,6 +13,7 @@ class Parent {
     var email : String = ""
     var username : String = ""
     var contact : String = ""
+    var notification : String = ""
     
     init() {
         
@@ -23,6 +24,7 @@ class Parent {
         self.email = userDict["email"] as? String ?? "No email"
         self.username = userDict["username"] as? String ?? "No username"
         self.contact = userDict["contact"] as? String ?? "No contact"
+        self.notification = userDict["notification"] as? String ?? "No Notification"
     }
     
     static var currentUser : Parent?
