@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-xd-Uyd">
-                                <rect key="frame" x="5" y="110" width="365" height="487"/>
+                                <rect key="frame" x="5" y="154" width="365" height="443"/>
                                 <color key="backgroundColor" red="0.17442419737265258" green="0.78769436330021159" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -104,7 +105,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIe-oe-s9G">
-                                <rect key="frame" x="102" y="30" width="170" height="20"/>
+                                <rect key="frame" x="102" y="74" width="170" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="d08-1o-Od3"/>
                                 </constraints>
@@ -113,7 +114,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-mv-hJQ">
-                                <rect key="frame" x="50" y="60" width="275" height="30"/>
+                                <rect key="frame" x="50" y="104" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -143,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNJ-0S-S9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="672"/>
+            <point key="canvasLocation" x="-74" y="710"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="bli-N4-KAL">
@@ -152,15 +153,50 @@
                     <view key="view" contentMode="scaleToFill" id="pxE-Wh-EUa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wd7-mi-Gld">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeW-cQ-eEu">
+                                    <size key="itemSize" width="89" height="95"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TQu-op-S9a" customClass="TCProfileCollectionViewCell" customModule="TuitionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="89" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wd7-mi-Gld" firstAttribute="leading" secondItem="E8R-Cj-OWr" secondAttribute="leading" id="1mB-b5-zn7"/>
+                            <constraint firstItem="E8R-Cj-OWr" firstAttribute="bottom" secondItem="wd7-mi-Gld" secondAttribute="bottom" id="Doz-uS-Bj5"/>
+                            <constraint firstItem="wd7-mi-Gld" firstAttribute="top" secondItem="E8R-Cj-OWr" secondAttribute="top" id="Vp8-sf-908"/>
+                            <constraint firstItem="E8R-Cj-OWr" firstAttribute="trailing" secondItem="wd7-mi-Gld" secondAttribute="trailing" id="wvv-wI-T58"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="E8R-Cj-OWr"/>
                     </view>
                     <navigationItem key="navigationItem" id="btP-LS-psU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="pha-xK-voR">
-                            <connections>
-                                <segue destination="a34-60-JAz" kind="show" id="lHn-m8-4zu"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="add" id="pha-xK-voR">
+                                <connections>
+                                    <segue destination="a34-60-JAz" kind="show" id="lHn-m8-4zu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Set Notifications" id="ry3-Yg-Yef">
+                                <connections>
+                                    <segue destination="nTb-oe-odJ" kind="show" id="gcr-C5-rEU"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="gzB-aT-ka7">
                             <connections>
                                 <action selector="logoutBtnTapped:" destination="DMZ-jR-z0U" id="GcG-Qk-Zbr"/>
@@ -170,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVg-u2-1sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="-20"/>
+            <point key="canvasLocation" x="-74.400000000000006" y="-20.239880059970016"/>
         </scene>
         <!--Add Subject View Controller-->
         <scene sceneID="Aqu-0e-XHg">
@@ -262,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAE-V6-eHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="-35"/>
+            <point key="canvasLocation" x="-838" y="-20"/>
         </scene>
     </scenes>
 </document>
