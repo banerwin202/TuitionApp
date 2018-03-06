@@ -15,7 +15,6 @@ class Student {
     var subjects : [Subject] = []
     var results : String = ""
     var uid : String = ""
-    var imageURL : String = ""
     var url : String = ""
     
     init() {

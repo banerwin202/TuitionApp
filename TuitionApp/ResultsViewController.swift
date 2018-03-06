@@ -25,8 +25,8 @@ class ResultsViewController: UIViewController {
     }
     
     var selectedSubject : Subject = Subject()
-    var results : [Result] = []
     var selectedStudent : Student = Student()
+    var results : [Result] = []
   
 
     var ref : DatabaseReference!
@@ -36,16 +36,29 @@ class ResultsViewController: UIViewController {
 //        subJectLabel.text = selectedSubject.name
         ref = Database.database().reference()
         observeFirebase()
+
+//        observeFirebase { (dict) in
+//            //
+//
+//        }
     }
     
     func observeFirebase() {
         //take the subject from terrance at .child("Maths")
-        let subjectResult = ref.child("Student").child("StudentID").child("Subjects").child("Maths")
-        let math = subjectResult.key
-//        print("heheheh \(math) hellllllll yapyoyokb")
+//        let subjectResult = ref.child("Tuition").child("Student").child("StudentID").child("Subjects").
+        
+        //        print("heheheh \(math) hellllllll yapyoyokb")
+        
+        let a = ref.child("Tuition").child("Result").child(selectedSubject.name).child(selectedStudent.uid)
+        print("\(a) is student IDDDDD")
         
         ref.child("Tuition").child("Result").observe(.childAdded) { (snapshot) in
-            
+//            if snapshot.hasChild("UID") {
+//
+//            } else {
+//
+//            }
+            print("\(self.selectedStudent.uid) is student ID222222")
             guard let resultDict = snapshot.value as? [String:Any] else {return}
             let result = Result(uid: snapshot.key, userDict: resultDict)
             
@@ -55,10 +68,39 @@ class ResultsViewController: UIViewController {
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
             }
             
-//            print(snapshot.key)
-//            print("testing")
+            //            print(snapshot.key)
+            //            print("testing")
         }
     }
+    
+//    func observeFirebase(withcompletion completion:@escaping ([String:Any]) -> Void) {
+//        //take the subject from terrance at .child("Maths")
+//        let subjectResult = ref.child("Tuition").child("Student").child("StudentID").child("Subjects").observe(.value) { (snapshot) in
+//
+//            guard let dict = snapshot.value as? [String:Any] else {return}
+//
+//            completion(dict)
+//
+//        }
+
+//
+////        print("heheheh \(math) hellllllll yapyoyokb")
+//
+//        ref.child("Tuition").child("Result").observe(.childAdded) { (snapshot) in
+//
+//            guard let resultDict = snapshot.value as? [String:Any] else {return}
+//            let result = Result(uid: snapshot.key, userDict: resultDict)
+//
+//            DispatchQueue.main.async {
+//                self.results.append(result)
+//                let indexPath = IndexPath(row: self.results.count - 1, section: 0)
+//                self.tableView.insertRows(at: [indexPath], with: .automatic)
+//            }
+//
+////            print(snapshot.key)
+////            print("testing")
+//        }
+//    }
     
 }
 

@@ -12,6 +12,10 @@
 		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
 		4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641602047B9970051D42E /* SignUpViewController.swift */; };
 		4E7641632047F3850051D42E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641622047F3850051D42E /* Extension.swift */; };
+		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
+		4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */; };
+		4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */; };
+		4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */; };
 		4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */; };
 		4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF14B204BDFE3009B5650 /* AttendanceTableViewCell.swift */; };
 		4EADF14E204BDFE3009B5650 /* AttendanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EADF14C204BDFE3009B5650 /* AttendanceTableViewCell.xib */; };
@@ -32,6 +36,7 @@
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
 		AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
+		AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,10 @@
 		1C112D36712946D5494F8A17 /* Pods-TuitionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4E7641602047B9970051D42E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4E7641622047F3850051D42E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignUpViewController.swift; sourceTree = "<group>"; };
+		4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignInViewController.swift; sourceTree = "<group>"; };
+		4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TCDetail.storyboard; sourceTree = "<group>"; };
+		4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpViewController.swift; sourceTree = "<group>"; };
 		4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		4EADF14B204BDFE3009B5650 /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		4EADF14C204BDFE3009B5650 /* AttendanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableViewCell.xib; sourceTree = "<group>"; };
@@ -62,6 +71,7 @@
 		AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		AACDB9A9204949E7003B0E45 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuitionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32D36A3EE713C044BB1E531 /* Pods-TuitionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +131,10 @@
 				4E7641622047F3850051D42E /* Extension.swift */,
 				4E7641602047B9970051D42E /* SignUpViewController.swift */,
 				4EF5AFCC2049185D005BD48E /* SignInViewController.swift */,
+				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
+				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
+				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
 				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
 				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
@@ -135,6 +149,7 @@
 				4EF5AFD5204A8374005BD48E /* Result.swift */,
 				00D9FEDC2047D80700A4C596 /* Subject.swift */,
 				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
+				AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */,
 				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
 				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD52720479DC20005FE5D /* Assets.xcassets */,
@@ -211,6 +226,7 @@
 				AABAD5332047A23D0005FE5D /* GoogleService-Info.plist in Resources */,
 				4EF5AFD2204955E1005BD48E /* ResultTableViewCell.xib in Resources */,
 				AABAD52820479DC20005FE5D /* Assets.xcassets in Resources */,
+				4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */,
 				4EADF14E204BDFE3009B5650 /* AttendanceTableViewCell.xib in Resources */,
 				AABAD5352047A81B0005FE5D /* Detail.storyboard in Resources */,
 				AABAD52620479DC20005FE5D /* Main.storyboard in Resources */,
@@ -290,14 +306,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */,
+				AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
+				4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */,
 				AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */,
 				4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */,
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,
 				4EF5AFD6204A8374005BD48E /* Result.swift in Sources */,
 				AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */,
+				4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */,
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
 				4EF5AFC920490C86005BD48E /* Parents.swift in Sources */,
@@ -445,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TuitionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NextAcademy.TuitionApp;
@@ -460,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TuitionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NextAcademy.TuitionApp;
