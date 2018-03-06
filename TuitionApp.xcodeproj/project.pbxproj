@@ -104,6 +104,7 @@
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
 				00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */,
 				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
+				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
 				AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */,
 			);
 			path = TuitionCentreVC;
@@ -112,7 +113,6 @@
 		00C48B76204E92F300FE26F2 /* ParentsVC */ = {
 			isa = PBXGroup;
 			children = (
-				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
 				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
 				4E7641602047B9970051D42E /* SignUpViewController.swift */,
