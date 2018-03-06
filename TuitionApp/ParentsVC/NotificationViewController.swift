@@ -11,7 +11,11 @@ import UserNotifications
 
 class NotificationViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            //tableView.dataSource = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
