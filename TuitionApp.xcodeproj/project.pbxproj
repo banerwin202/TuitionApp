@@ -16,6 +16,7 @@
 		4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */; };
 		4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */; };
 		4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */; };
+		4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2600204E816D000600DC /* AddSubjectViewController.swift */; };
 		4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */; };
 		4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF14B204BDFE3009B5650 /* AttendanceTableViewCell.swift */; };
 		4EADF14E204BDFE3009B5650 /* AttendanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EADF14C204BDFE3009B5650 /* AttendanceTableViewCell.xib */; };
@@ -50,6 +51,7 @@
 		4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignInViewController.swift; sourceTree = "<group>"; };
 		4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TCDetail.storyboard; sourceTree = "<group>"; };
 		4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpViewController.swift; sourceTree = "<group>"; };
+		4E9D2600204E816D000600DC /* AddSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
 		4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		4EADF14B204BDFE3009B5650 /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		4EADF14C204BDFE3009B5650 /* AttendanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
 				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
 				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
 				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
@@ -321,6 +324,7 @@
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
 				4EF5AFC920490C86005BD48E /* Parents.swift in Sources */,
+				4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
 				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
