@@ -24,20 +24,20 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentAgeTextField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
-    @IBOutlet weak var subjectPickerView: UIPickerView!
-    @IBOutlet weak var subjectSelected: UILabel!
+//    @IBOutlet weak var subjectPickerView: UIPickerView!
+//    @IBOutlet weak var subjectSelected: UILabel!
     
     var ref : DatabaseReference!
     let imagePicker = UIImagePickerController()
-    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
+//    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        subjectPickerView.dataSource = self
-        subjectPickerView.delegate = self
-        createAlertView()
+//        subjectPickerView.dataSource = self
+//        subjectPickerView.delegate = self
+//        createAlertView()
         ref = Database.database().reference()
     }
 
@@ -45,15 +45,7 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
         signUpUser()
     }
     
-    @IBAction func logoutBtnTapped(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-        } catch {
-            
-        }
-        
-    }
+
     
     
     @objc func findImageButtonTapped(_ sender: Any) {
@@ -115,57 +107,58 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
         dismiss(animated: true, completion: nil)
     }
     
-    func createAlertView() {
-        
-        let alertView = UIAlertController(title: "hello", message: "hi", preferredStyle: UIAlertControllerStyle.alert)
-        
-//        subjectPickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 60))
-        subjectPickerView.dataSource = self
-        subjectPickerView.delegate = self
-        
-        alertView.view.addSubview(subjectPickerView!)
-        
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-        
-        alertView.addAction(action)
-        present(alertView, animated: true, completion: nil)
-        
-        
-        
-        let alert = UIAlertController(title: "title", message: "message", preferredStyle: .actionSheet)
-        alert.isModalInPopover = true
-        
-        //  Create a frame (placeholder/wrapper) for the picker and then create the picker
-        let pickerFrame = CGRect(x: 17, y: 52, width: 270, height: 100) // CGRectMake(left), top, width, height) - left and top are like margins
-        let picker = UIPickerView(frame: pickerFrame)
-        
-        //  set the pickers datasource and delegate
-        picker.delegate = self
-        picker.dataSource = self
-        
-        //  Add the picker to the alert controller
-        alert.view.addSubview(picker)
-
-    }
+//    func createAlertView() {
+//
+//        let alertView = UIAlertController(title: "hello", message: "hi", preferredStyle: UIAlertControllerStyle.alert)
+//
+////        subjectPickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 60))
+//        subjectPickerView.dataSource = self
+//        subjectPickerView.delegate = self
+//
+//        alertView.view.addSubview(subjectPickerView!)
+//
+//        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+//
+//        alertView.addAction(action)
+//        present(alertView, animated: true, completion: nil)
+//
+//
+//
+//        let alert = UIAlertController(title: "title", message: "message", preferredStyle: .actionSheet)
+//        alert.isModalInPopover = true
+//
+//        //  Create a frame (placeholder/wrapper) for the picker and then create the picker
+//        let pickerFrame = CGRect(x: 17, y: 52, width: 270, height: 100) // CGRectMake(left), top, width, height) - left and top are like margins
+//        let picker = UIPickerView(frame: pickerFrame)
+//
+//        //  set the pickers datasource and delegate
+//        picker.delegate = self
+//        picker.dataSource = self
+//
+//        //  Add the picker to the alert controller
+//        alert.view.addSubview(picker)
+//
+//    }
 
 
 }
 
-extension StudentSignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return subject.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return subject[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        subjectSelected.text = subject[row]
-    }
-    
-}
+//extension StudentSignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return subject.count
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return subject[row]
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        subjectSelected.text = subject[row]
+//    }
+//
+//}
+
