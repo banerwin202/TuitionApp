@@ -34,6 +34,9 @@ class StudentViewController: UIViewController {
         }
     }
     
+    var testCalendar = Calendar(identifier: .gregorian)
+    
+    let preDateSelectable : Bool = true
     
     var subjects : [Subject] = []
     
@@ -89,10 +92,6 @@ class StudentViewController: UIViewController {
         
         validCell.eventDotView.isHidden = !eventsFromTheServer.contains{ $0.key == formatter.string(from: cellState.date)}
         
-        
-        
-        
-        
     }
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
@@ -122,8 +121,26 @@ class StudentViewController: UIViewController {
         
     }
     
-    func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
+    func handleCellSelected(view: JTAppleCell?, cellState: CellState, date: Date) {
+        
         guard let validCell = view as? CustomCell else {return}
+        
+//        //InDate, OutDate
+//        if cellState.dateBelongsTo != .thisMonth {
+//            validCell.dateLabel.text = ""
+//            validCell.isUserInteractionEnabled = false
+////            self.stableBackView.isHidden = true
+//        } else if date.isSmaller(to: Date()) && !preDateSelectable {
+//            validCell.dateLabel.text = "-"
+//            validCell.dateLabel.textColor = UIColor.white
+//            validCell.isUserInteractionEnabled = true
+////            self.stableBackView.isHidden = true
+//        } else {
+////            self.stableBackView.isHidden = false
+//            validCell.isUserInteractionEnabled = true
+//            validCell.dateLabel.text = cellState.text
+//            validCell.dateLabel.textColor = selectedMonthColor
+//        }
         
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
@@ -133,9 +150,14 @@ class StudentViewController: UIViewController {
     }
     
     func setUpCalendarView() {
+        calendarView.calendarDataSource = self
+        calendarView.calendarDelegate = self
+        
         //Setup calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
+        
+//        calendarView.visibleDates().indates
         
         //Setup labels
         calendarView.visibleDates { (visibleDates) in
@@ -144,13 +166,21 @@ class StudentViewController: UIViewController {
     }
     
     func setUpViewsOfCalendar(from visibleDates: DateSegmentInfo) {
-        guard let date = visibleDates.monthDates.first?.date else {return}
+        guard let startDate = visibleDates.monthDates.first?.date else {return}
         
-        formatter.dateFormat = "yyyy"
-        year.text = formatter.string(from: date)
+        let monthNumber = testCalendar.dateComponents([.month], from: startDate)
+        let monthName = DateFormatter().monthSymbols[Int(monthNumber.month!) - 1]
         
-        formatter.dateFormat = "MMMM"
-        month.text = formatter.string(from: date)
+        let yearNumber = testCalendar.component(.year, from: startDate)
+        
+        year.text = String(yearNumber)
+        month.text = monthName
+            
+//        formatter.dateFormat = "yyyy"
+//        year.text = formatter.string(from: date)
+//
+//        formatter.dateFormat = "MMMM"
+//        month.text = formatter.string(from: date)
     }
     
     
@@ -260,7 +290,7 @@ extension StudentViewController : JTAppleCalendarViewDataSource {
         if let startDate = formatter.date(from: "2018 01 1"),
             let endDate = formatter.date(from: "2018 12 31") {
             
-            let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+            let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: 6, calendar: testCalendar, generateInDates:.forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday, hasStrictBoundaries: false)
             return parameters
         }
         return ConfigurationParameters(startDate: Date(), endDate: Date())
@@ -276,7 +306,7 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
         
         cell.dateLabel.text = cellState.text
         
-        handleCellSelected(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState, date: date)
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
@@ -297,7 +327,7 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
         
         validCell.bounce()
         
-        handleCellSelected(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState, date: date)
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
@@ -309,7 +339,7 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         
-        handleCellSelected(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState, date: date)
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
@@ -433,6 +463,12 @@ extension UIView {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
             self.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
+    }
+}
+
+extension Date {
+    func isSmaller(to: Date) -> Bool {
+        return Calendar.current.compare(self, to: to, toGranularity: .day) == .orderedAscending ? true : false
     }
 }
 
