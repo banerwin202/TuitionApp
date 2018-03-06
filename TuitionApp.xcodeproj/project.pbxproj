@@ -94,6 +94,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00C48B75204E92C100FE26F2 /* TuitionCentreVC */ = {
+			isa = PBXGroup;
+			children = (
+				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
+				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
+				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
+				AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */,
+			);
+			path = TuitionCentreVC;
+			sourceTree = "<group>";
+		};
+		00C48B76204E92F300FE26F2 /* ParentsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
+				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
+				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
+				4E7641602047B9970051D42E /* SignUpViewController.swift */,
+				4EF5AFCC2049185D005BD48E /* SignInViewController.swift */,
+				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
+				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
+				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
+				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
+				AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */,
+				4EF5AFC820490C86005BD48E /* Parents.swift */,
+				00D9FEDE2048019000A4C596 /* Student.swift */,
+				4EF5AFD5204A8374005BD48E /* Result.swift */,
+				00D9FEDC2047D80700A4C596 /* Subject.swift */,
+				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
+				4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */,
+				4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */,
+				00C48B77204E933C00FE26F2 /* Calendar */,
+			);
+			path = ParentsVC;
+			sourceTree = "<group>";
+		};
+		00C48B77204E933C00FE26F2 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		2F9826CC4A63C6BDCCDC67BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,35 +177,14 @@
 		AABAD51F20479DC20005FE5D /* TuitionApp */ = {
 			isa = PBXGroup;
 			children = (
+				00C48B76204E92F300FE26F2 /* ParentsVC */,
+				00C48B75204E92C100FE26F2 /* TuitionCentreVC */,
 				AABAD52020479DC20005FE5D /* AppDelegate.swift */,
 				AABAD52420479DC20005FE5D /* Main.storyboard */,
 				4E7641622047F3850051D42E /* Extension.swift */,
-				4E7641602047B9970051D42E /* SignUpViewController.swift */,
-				4EF5AFCC2049185D005BD48E /* SignInViewController.swift */,
-				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
-				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
-				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
-				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
-				AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */,
-				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
-				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
-				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
-				AACDB9A9204949E7003B0E45 /* StudentViewController.swift */,
-				00D9FEE020480D4000A4C596 /* CustomCell.swift */,
-				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
-				4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */,
-				4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */,
 				4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */,
 				4EADF14B204BDFE3009B5650 /* AttendanceTableViewCell.swift */,
 				4EADF14C204BDFE3009B5650 /* AttendanceTableViewCell.xib */,
-				4EF5AFC820490C86005BD48E /* Parents.swift */,
-				00D9FEDE2048019000A4C596 /* Student.swift */,
-				4EF5AFD5204A8374005BD48E /* Result.swift */,
-				00D9FEDC2047D80700A4C596 /* Subject.swift */,
-				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
-				AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */,
-				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
-				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD52720479DC20005FE5D /* Assets.xcassets */,
 				AABAD52920479DC20005FE5D /* LaunchScreen.storyboard */,
 				AABAD52C20479DC20005FE5D /* Info.plist */,
