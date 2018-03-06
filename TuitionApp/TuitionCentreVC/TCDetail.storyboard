@@ -285,7 +285,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Vg2-y9-vLR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hlP-Cj-OEw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TCNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="hlP-Cj-OEw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Db-At-7Gu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
