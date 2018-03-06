@@ -10,4 +10,10 @@ import UIKit
 
 class TCProfileCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var ageLabel: UILabel!
+    
 }
