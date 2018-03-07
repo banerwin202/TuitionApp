@@ -115,5 +115,17 @@ extension TCProfileViewController : UICollectionViewDataSource, UICollectionView
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "AddSubjectViewController") as? AddSubjectViewController else {return}
+        
+        let selectedStudent = students[indexPath.row]
+        
+        vc.selectedStudent = selectedStudent
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
     
 }
