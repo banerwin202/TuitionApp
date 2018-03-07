@@ -274,7 +274,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ud1-LP-eZb">
-                                <rect key="frame" x="10" y="50" width="355" height="29"/>
+                                <rect key="frame" x="10" y="49" width="355" height="29"/>
                                 <segments>
                                     <segment title="Subjects"/>
                                     <segment title="Schedule"/>

@@ -28,6 +28,7 @@ class TCSignUpViewController: UIViewController {
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
         signUpUser()
+        print("can sign up user tap")
     }
     
     func signUpUser() {

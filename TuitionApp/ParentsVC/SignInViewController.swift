@@ -28,35 +28,96 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         userChecking()
+        TCUserChecking()
     }
     
     func userChecking () {
-        if Auth.auth().currentUser != nil {
-            let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
-            guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
-            self.present(navVC, animated: true, completion: nil)
-        }
-    }
-
-    @objc func signInButtonTapped() {
-                guard let email = emailTextField.text,
-                    let password = passwordTextField.text else {return}
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let validError = error {
-                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
-            }
+        ref.child("Tuition").child("Parent").observe(.childAdded) { (snapshot) in
+            guard let b = Auth.auth().currentUser?.uid else {return}
+            print(b)
+            guard let a = Auth.auth().currentUser?.uid else {return}
             
-            if user != nil {
-                self.emailTextField.text = ""
-                self.passwordTextField.text = ""
+            if Auth.auth().currentUser != nil && a == snapshot.key {
                 let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
                 guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
                 self.present(navVC, animated: true, completion: nil)
-                
             }
         }
+    }
+    
+    func TCUserChecking () {
+        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
+            guard let a = Auth.auth().currentUser?.uid else {return}
+            
+            if Auth.auth().currentUser != nil && a == snapshot.key {
+                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
+                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+                self.present(navVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
 
+//    @objc func signInButtonTapped() {
+//                guard let email = emailTextField.text,
+//                    let password = passwordTextField.text else {return}
+//
+//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+//            if let validError = error {
+//                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+//            }
+//
+//            if user != nil {
+//                self.emailTextField.text = ""
+//                self.passwordTextField.text = ""
+//                let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
+//                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+//                self.present(navVC, animated: true, completion: nil)
+//
+//            }
+//        }
+//
+//    }
+    
+    @objc func signInButtonTapped() {
+        var userIsTuitionCheck : Bool = false
+        
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {return}
+        
+        ref.child("Tuition").child("Parent").observe(.value) { (snapshot) in
+            
+            if let dict = snapshot.value as? [String:Any] {
+                
+                for id in dict {
+                    if let idValues = id.value as? [String:Any],
+                        let emailValue = idValues["Email"] as? String {
+                        
+                        if email == emailValue {
+                            userIsTuitionCheck = true
+                            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                                if let validError = error {
+                                    self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+                                    
+                                }
+                                
+                                if user != nil {
+                                    self.emailTextField.text = ""
+                                    self.passwordTextField.text = ""
+                                    let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+                                    self.present(navVC, animated: true, completion: nil)
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                if userIsTuitionCheck == false {
+                    self.showAlert(withTitle: "Error", message: "Please sign in with existing Parent account")
+                }
+            }
+        }
     }
 
 }

@@ -44,21 +44,18 @@ class ResultsViewController: UIViewController {
     }
     
     func observeFirebase() {
-        //take the subject from terrance at .child("Maths")
-//        let subjectResult = ref.child("Tuition").child("Student").child("StudentID").child("Subjects").
-        
-        //        print("heheheh \(math) hellllllll yapyoyokb")
-        
         let a = ref.child("Tuition").child("Result").child(selectedSubject.name).child(selectedStudent.uid)
         print("\(a) is student IDDDDD")
         
-        ref.child("Tuition").child("Result").observe(.childAdded) { (snapshot) in
+        ref.child("Tuition").child("Result").child(selectedSubject.name).child(selectedStudent.uid).observe(.childAdded) { (snapshot) in
 //            if snapshot.hasChild("UID") {
 //
 //            } else {
 //
 //            }
             print("\(self.selectedStudent.uid) is student ID222222")
+            print("\(self.selectedSubject.name) is subjectName ID222222")
+
             guard let resultDict = snapshot.value as? [String:Any] else {return}
             let result = Result(uid: snapshot.key, userDict: resultDict)
             
@@ -67,9 +64,6 @@ class ResultsViewController: UIViewController {
                 let indexPath = IndexPath(row: self.results.count - 1, section: 0)
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
             }
-            
-            //            print(snapshot.key)
-            //            print("testing")
         }
     }
     
