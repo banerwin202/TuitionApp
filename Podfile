@@ -12,7 +12,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Messaging'
 
-
+pod 'KYDrawerController', '~> 2.0'
 pod 'JTAppleCalendar', '~> 7.0'
 
 # Pods for PieChart
