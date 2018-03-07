@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -158,19 +160,57 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeW-cQ-eEu">
-                                    <size key="itemSize" width="89" height="95"/>
+                                    <size key="itemSize" width="174" height="192"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TQu-op-S9a" customClass="TCProfileCollectionViewCell" customModule="TuitionApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="95"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="192"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Aoz-Bi-ato">
+                                                    <rect key="frame" x="18" y="118" width="138" height="46"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egP-eu-MnT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="138" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-vD-Oek">
+                                                            <rect key="frame" x="0.0" y="25.5" width="138" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJa-Rg-ztJ">
+                                                    <rect key="frame" x="47" y="28" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="314-je-Feo"/>
+                                                        <constraint firstAttribute="width" secondItem="tJa-Rg-ztJ" secondAttribute="height" multiplier="1:1" id="4tJ-bY-iMU"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="tJa-Rg-ztJ" firstAttribute="centerX" secondItem="TQu-op-S9a" secondAttribute="centerX" id="SH7-dx-CbH"/>
+                                            <constraint firstItem="tJa-Rg-ztJ" firstAttribute="top" secondItem="TQu-op-S9a" secondAttribute="topMargin" constant="20" id="Wff-M6-GnQ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Aoz-Bi-ato" secondAttribute="bottom" constant="20" id="b8f-63-Wau"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Aoz-Bi-ato" secondAttribute="trailing" constant="10" id="c50-UI-HHk"/>
+                                            <constraint firstItem="Aoz-Bi-ato" firstAttribute="leading" secondItem="TQu-op-S9a" secondAttribute="leadingMargin" constant="10" id="zGY-u7-xL5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="ageLabel" destination="Jid-vD-Oek" id="WDi-Ag-0yQ"/>
+                                            <outlet property="nameLabel" destination="egP-eu-MnT" id="CAJ-f0-0bS"/>
+                                            <outlet property="profileImageView" destination="tJa-Rg-ztJ" id="Nqs-Oy-dfQ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -203,6 +243,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="wd7-mi-Gld" id="PwO-cC-RH6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVg-u2-1sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
