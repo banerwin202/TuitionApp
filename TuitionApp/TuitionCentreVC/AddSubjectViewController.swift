@@ -22,6 +22,7 @@ class AddSubjectViewController: UIViewController {
     let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
     var index : Int = 0
     var ref: DatabaseReference!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
