@@ -12,7 +12,7 @@ import FirebaseDatabase
 class NotificationViewController: UIViewController {
     
     var ref : DatabaseReference!
-    var notifications : [Notification] = []
+    var notifications : [NotificationClass] = []
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -38,7 +38,7 @@ class NotificationViewController: UIViewController {
             
             guard let userDict = snapshot.value as? [String:Any] else {return}
             
-            let user = Notification(uid: snapshot.key, dict: userDict)
+            let user = NotificationClass(uid: snapshot.key, dict: userDict)
             
             DispatchQueue.main.async {
                 self.notifications.append(user)
