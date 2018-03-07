@@ -40,7 +40,6 @@
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
 		AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
-		AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +78,6 @@
 		AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		AACDB9A9204949E7003B0E45 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
-		AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuitionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32D36A3EE713C044BB1E531 /* Pods-TuitionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +119,6 @@
 				AABAD5362047AA9C0005FE5D /* ProfileViewController.swift */,
 				AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */,
 				AABAD5382047AADE0005FE5D /* NotificationViewController.swift */,
-				AAFC21CD204D293B001E7EED /* NotificationTableViewCell.swift */,
 				4EF5AFC820490C86005BD48E /* Parents.swift */,
 				00D9FEDE2048019000A4C596 /* Student.swift */,
 				4EF5AFD5204A8374005BD48E /* Result.swift */,
@@ -347,7 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */,
-				AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
