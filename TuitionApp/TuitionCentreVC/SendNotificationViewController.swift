@@ -50,17 +50,13 @@ class SendNotificationViewController: UIViewController {
       guard let title = titleTextField.text,
         let text = textView.text else {return}
         
-        let tuitionCenter = Auth.auth().currentUser
-        if let tuitionCenter = tuitionCenter {
-            let tuitionID = tuitionCenter.uid
-        
         let userPost: [String:Any] = ["title" : title, "text" : text]
         
-        self.ref.child("Tuition Centre").child(tuitionID).child("notification").setValue(userPost)
+        self.ref.child("Tuition").child("Notification").childByAutoId().setValue(userPost)
             
             
     }
 
- }
+ 
 
 }

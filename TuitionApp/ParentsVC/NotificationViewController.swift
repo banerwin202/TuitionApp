@@ -7,19 +7,23 @@
 //
 
 import UIKit
-import UserNotifications
+import FirebaseDatabase
 
 class NotificationViewController: UIViewController {
     
+    var ref : DatabaseReference!
+    var notifications : [Notification] = []
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            //tableView.dataSource = self
+        tableView.dataSource = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
+        observeNotification()
         
     }
 
@@ -28,7 +32,41 @@ class NotificationViewController: UIViewController {
       
     }
     
+    func observeNotification() {
+        
+        ref.child("Tuition").child("Notification").observe(.childAdded) { (snapshot) in
+            
+            guard let userDict = snapshot.value as? [String:Any] else {return}
+            
+            let user = Notification(uid: snapshot.key, dict: userDict)
+            
+            DispatchQueue.main.async {
+                self.notifications.append(user)
+                let indexPath = IndexPath(row: self.notifications.count - 1, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+            
+            self.tableView.reloadData()
+            
+        }
+    }
 
+}
+
+extension NotificationViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notifications.count
+    }
     
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath)
+        
+        cell.textLabel?.text = notifications[indexPath.row].title
+        cell.detailTextLabel?.text = notifications[indexPath.row].text
+        
+        return cell
+    }
+    
+    
 }

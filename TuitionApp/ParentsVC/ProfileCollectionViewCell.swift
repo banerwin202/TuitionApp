@@ -17,4 +17,14 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var numberOfSubjectLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.masksToBounds = false
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
+    }
+    
 }

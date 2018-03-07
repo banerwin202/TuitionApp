@@ -28,6 +28,7 @@
 		4EF5AFD2204955E1005BD48E /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */; };
 		4EF5AFD6204A8374005BD48E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFD5204A8374005BD48E /* Result.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
+		AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */; };
 		AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		4EF5AFD5204A8374005BD48E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNotificationViewController.swift; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				4EF5AFC820490C86005BD48E /* Parents.swift */,
 				00D9FEDE2048019000A4C596 /* Student.swift */,
 				4EF5AFD5204A8374005BD48E /* Result.swift */,
+				AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */,
 				00D9FEDC2047D80700A4C596 /* Subject.swift */,
 				AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */,
 				4EF5AFCF204955E1005BD48E /* ResultTableViewCell.swift */,
@@ -364,6 +367,7 @@
 				4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
+				AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */,
 				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
 				4EF5AFD1204955E1005BD48E /* ResultTableViewCell.swift in Sources */,
 				4E7641632047F3850051D42E /* Extension.swift in Sources */,
