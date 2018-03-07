@@ -22,7 +22,7 @@ class AddSubjectViewController: UIViewController {
     let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
     var index : Int = 0
     var ref: DatabaseReference!
-    
+    var selectedStudent : Student = Student()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class AddSubjectViewController: UIViewController {
         subjectPickerView.delegate = self
         ref = Database.database().reference()
 
+        studentNameLabel.text = selectedStudent.name
     }
 
     @IBAction func addSubjectButtonTapped(_ sender: Any) {
@@ -40,6 +41,10 @@ class AddSubjectViewController: UIViewController {
         print(selectedSubject)
         let userPost: [String:Any] = [selectedSubject: true]
         self.ref.child("Tuition").child("Student").child("StudentID").child("Subjects").updateChildValues(userPost)
+    }
+
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -61,7 +66,6 @@ extension AddSubjectViewController: UIPickerViewDataSource, UIPickerViewDelegate
         subjectSelectedLabel.text = subject[row]
         index = row
     }
-
 }
 
 extension AddSubjectViewController: UITableViewDataSource {

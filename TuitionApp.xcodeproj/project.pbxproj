@@ -16,7 +16,7 @@
 		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
 		4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */; };
 		4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */; };
-		4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */; };
+		4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */; };
 		4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2600204E816D000600DC /* AddSubjectViewController.swift */; };
 		4E9D2603204E8E78000600DC /* TCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2602204E8E78000600DC /* TCProfileViewController.swift */; };
 		4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */; };
@@ -54,7 +54,7 @@
 		4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignUpViewController.swift; sourceTree = "<group>"; };
 		4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignInViewController.swift; sourceTree = "<group>"; };
 		4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TCDetail.storyboard; sourceTree = "<group>"; };
-		4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpViewController.swift; sourceTree = "<group>"; };
+		4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
 		4E9D2600204E816D000600DC /* AddSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
 		4E9D2602204E8E78000600DC /* TCProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCProfileViewController.swift; sourceTree = "<group>"; };
 		4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +104,7 @@
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
 				00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */,
 				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
+				4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */,
 				4E9D2600204E816D000600DC /* AddSubjectViewController.swift */,
 				AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */,
 			);
@@ -113,7 +114,6 @@
 		00C48B76204E92F300FE26F2 /* ParentsVC */ = {
 			isa = PBXGroup;
 			children = (
-				4E9D25E0204CFEDE000600DC /* StudentSignUpViewController.swift */,
 				AABAD5342047A81B0005FE5D /* Detail.storyboard */,
 				4E7641602047B9970051D42E /* SignUpViewController.swift */,
 				4EF5AFCC2049185D005BD48E /* SignInViewController.swift */,
@@ -347,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */,
+				4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */,
+				AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,

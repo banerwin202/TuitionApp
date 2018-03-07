@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     var ref: DatabaseReference!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()      
         ref = Database.database().reference()
         userChecking()
         TCUserChecking()

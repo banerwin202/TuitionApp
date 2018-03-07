@@ -11,10 +11,15 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
-class StudentSignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateStudentViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var studentImageView: UIImageView! {
         didSet {
+            
+            studentImageView.layer.borderColor = UIColor(red: 0, green: 1, blue: 1, alpha: 1.0).cgColor
+            studentImageView.layer.cornerRadius = 5.0
+            studentImageView.layer.borderWidth = 5
+
             studentImageView.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(findImageButtonTapped))
             studentImageView.addGestureRecognizer(tap)
@@ -31,8 +36,8 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         imagePicker.delegate = self
-//        createAlertView()
         ref = Database.database().reference()
     }
 
@@ -53,11 +58,13 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
             let studentID = studentIDTextField.text,
             let studentAge = studentAgeTextField.text else {return}
         
+        let age = Int(studentAge) ?? 0
+        
         if let image = self.studentImageView.image {
             self.uploadToStorage(image)
         }
         
-        let newStudent : [String : Any] = ["StudentName" : studentName, "StudentAge" : studentAge]
+        let newStudent : [String : Any] = ["Name" : studentName, "Age" : age]
         
         self.ref.child("Tuition").child("Student").child(studentID).setValue(newStudent)
     }
@@ -71,14 +78,14 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        storageRef.child(studentID).child("profilePic").putData(imageData, metadata: metaData) { (meta, error) in
+        storageRef.child(studentID).child("StudentImage").putData(imageData, metadata: metaData) { (meta, error) in
             
             if let validError = error {
                 print(validError.localizedDescription)
             }
             
             if let downloadURL = meta?.downloadURL()?.absoluteString {
-                self.ref.child("Tuition").child("Student").child(studentID).child("StudentPicURL").setValue(downloadURL)
+                self.ref.child("Tuition").child("Student").child(studentID).child("Image").setValue(downloadURL)
             }
         }
     }
