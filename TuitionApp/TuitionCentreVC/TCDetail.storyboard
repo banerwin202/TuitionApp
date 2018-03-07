@@ -13,10 +13,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Student Sign Up View Controller-->
+        <!--Create Student View Controller-->
         <scene sceneID="AOt-da-LAd">
             <objects>
-                <viewController storyboardIdentifier="StudentSignUpViewController" id="a34-60-JAz" customClass="StudentSignUpViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentSignUpViewController" id="a34-60-JAz" customClass="CreateStudentViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrc-cv-V44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +45,14 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCI-35-SFb">
-                                <rect key="frame" x="107" y="104" width="160" height="160"/>
+                                <rect key="frame" x="107.5" y="104" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="HMG-s7-Kkc"/>
                                     <constraint firstAttribute="width" constant="160" id="hZA-W5-ulN"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3C-KQ-62j">
-                                <rect key="frame" x="136" y="414" width="104" height="30"/>
+                                <rect key="frame" x="135.5" y="414" width="104" height="30"/>
                                 <state key="normal" title="Create Student"/>
                                 <connections>
                                     <action selector="createStudentButtonTapped:" destination="a34-60-JAz" eventType="touchUpInside" id="3oT-b7-nau"/>
@@ -260,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLQ-VT-mDO">
-                                <rect key="frame" x="143" y="282" width="88" height="30"/>
+                                <rect key="frame" x="143.5" y="282" width="88" height="30"/>
                                 <state key="normal" title="Add Subject "/>
                                 <connections>
                                     <action selector="addSubjectButtonTapped:" destination="zUL-iS-aa7" eventType="touchUpInside" id="Qse-kN-caE"/>
@@ -271,10 +271,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ckt-pv-xla">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ckt-pv-xla" id="MQD-aD-6yE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -296,7 +296,7 @@
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaT-Ue-UBs">
-                                <rect key="frame" x="122" y="251" width="130" height="21"/>
+                                <rect key="frame" x="122.5" y="251" width="130" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

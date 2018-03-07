@@ -11,10 +11,15 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
-class StudentSignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateStudentViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var studentImageView: UIImageView! {
         didSet {
+            
+            studentImageView.layer.borderColor = UIColor(red: 0, green: 1, blue: 1, alpha: 1.0).cgColor
+            studentImageView.layer.cornerRadius = 5.0
+            studentImageView.layer.borderWidth = 5
+
             studentImageView.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(findImageButtonTapped))
             studentImageView.addGestureRecognizer(tap)
@@ -31,8 +36,8 @@ class StudentSignUpViewController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         imagePicker.delegate = self
-//        createAlertView()
         ref = Database.database().reference()
     }
 
