@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import KYDrawerController
 
 class TCSignInViewController: UIViewController {
     
@@ -45,7 +46,7 @@ class TCSignInViewController: UIViewController {
             
             if Auth.auth().currentUser != nil && currentUserUID == snapshot.key {
                 let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController else {return}
                 self.present(navVC, animated: true, completion: nil)
             }
         }

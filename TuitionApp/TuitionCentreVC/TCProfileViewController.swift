@@ -23,6 +23,8 @@ class TCProfileViewController: UIViewController {
     
     var students : [Student] = []
     
+    var selectedPage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,7 +123,7 @@ extension TCProfileViewController : UICollectionViewDataSource, UICollectionView
         
         let selectedStudent = students[indexPath.row]
         
-        vc.selectedStudent = selectedStudent
+//        vc.selectedStudent = selectedStudent
         
         self.present(vc, animated: true, completion: nil)
         
