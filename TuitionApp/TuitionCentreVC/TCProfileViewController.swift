@@ -57,6 +57,7 @@ class TCProfileViewController: UIViewController {
                         self.students.append(student)
                         let indexPath = IndexPath(row: self.students.count - 1, section: 0)
                         self.collectionView.insertItems(at: [indexPath])
+                        self.collectionView.reloadData()
                     }, completion: nil)
                 }
             }

@@ -58,11 +58,13 @@ class CreateStudentViewController: UIViewController, UIImagePickerControllerDele
             let studentID = studentIDTextField.text,
             let studentAge = studentAgeTextField.text else {return}
         
+        let age = Int(studentAge) ?? 0
+        
         if let image = self.studentImageView.image {
             self.uploadToStorage(image)
         }
         
-        let newStudent : [String : Any] = ["StudentName" : studentName, "StudentAge" : studentAge]
+        let newStudent : [String : Any] = ["Name" : studentName, "Age" : age]
         
         self.ref.child("Tuition").child("Student").child(studentID).setValue(newStudent)
     }
@@ -76,14 +78,14 @@ class CreateStudentViewController: UIViewController, UIImagePickerControllerDele
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        storageRef.child(studentID).child("profilePic").putData(imageData, metadata: metaData) { (meta, error) in
+        storageRef.child(studentID).child("StudentImage").putData(imageData, metadata: metaData) { (meta, error) in
             
             if let validError = error {
                 print(validError.localizedDescription)
             }
             
             if let downloadURL = meta?.downloadURL()?.absoluteString {
-                self.ref.child("Tuition").child("Student").child(studentID).child("StudentPicURL").setValue(downloadURL)
+                self.ref.child("Tuition").child("Student").child(studentID).child("Image").setValue(downloadURL)
             }
         }
     }

@@ -31,6 +31,7 @@ class AddSubjectViewController: UIViewController {
         subjectPickerView.delegate = self
         ref = Database.database().reference()
 
+        studentNameLabel.text = selectedStudent.name
     }
 
     @IBAction func addSubjectButtonTapped(_ sender: Any) {
@@ -41,6 +42,11 @@ class AddSubjectViewController: UIViewController {
         let userPost: [String:Any] = [selectedSubject: true]
         self.ref.child("Tuition").child("Student").child("StudentID").child("Subjects").updateChildValues(userPost)
     }
+
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension AddSubjectViewController: UIPickerViewDataSource, UIPickerViewDelegate {
