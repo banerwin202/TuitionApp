@@ -348,7 +348,6 @@
 			files = (
 				4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */,
 				4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */,
-				AAFC21CE204D293B001E7EED /* NotificationTableViewCell.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
