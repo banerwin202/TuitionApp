@@ -11,6 +11,7 @@
 		00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDC2047D80700A4C596 /* Subject.swift */; };
 		00D9FEDF2048019000A4C596 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDE2048019000A4C596 /* Student.swift */; };
 		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
+		4E3B2F5D204FC4BF002A4485 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */; };
 		4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641602047B9970051D42E /* SignUpViewController.swift */; };
 		4E7641632047F3850051D42E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641622047F3850051D42E /* Extension.swift */; };
 		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
@@ -179,8 +180,6 @@
 		AABAD51F20479DC20005FE5D /* TuitionApp */ = {
 			isa = PBXGroup;
 			children = (
-				00C48B76204E92F300FE26F2 /* ParentsVC */,
-				00C48B75204E92C100FE26F2 /* TuitionCentreVC */,
 				AABAD52020479DC20005FE5D /* AppDelegate.swift */,
 				AABAD52420479DC20005FE5D /* Main.storyboard */,
 				4E7641622047F3850051D42E /* Extension.swift */,
@@ -191,6 +190,8 @@
 				AABAD52920479DC20005FE5D /* LaunchScreen.storyboard */,
 				AABAD52C20479DC20005FE5D /* Info.plist */,
 				AABAD5322047A23D0005FE5D /* GoogleService-Info.plist */,
+				00C48B76204E92F300FE26F2 /* ParentsVC */,
+				00C48B75204E92C100FE26F2 /* TuitionCentreVC */,
 			);
 			path = TuitionApp;
 			sourceTree = "<group>";
@@ -345,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3B2F5D204FC4BF002A4485 /* CreateStudentViewController.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
