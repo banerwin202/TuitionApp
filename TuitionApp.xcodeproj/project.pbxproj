@@ -16,7 +16,6 @@
 		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
 		4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */; };
 		4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */; };
-		4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */; };
 		4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2600204E816D000600DC /* AddSubjectViewController.swift */; };
 		4E9D2603204E8E78000600DC /* TCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2602204E8E78000600DC /* TCProfileViewController.swift */; };
 		4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */; };
@@ -346,8 +345,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E9D25E1204CFEDE000600DC /* StudentSignUpViewController.swift in Sources */,
-				4E9D25E1204CFEDE000600DC /* CreateStudentViewController.swift in Sources */,
 				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
