@@ -82,53 +82,94 @@
             </objects>
             <point key="canvasLocation" x="796" y="-20"/>
         </scene>
-        <!--View Controller-->
+        <!--Upload Result View Controller-->
         <scene sceneID="f50-tG-dED">
             <objects>
-                <viewController id="LzF-OS-IMD" sceneMemberID="viewController">
+                <viewController id="LzF-OS-IMD" customClass="UploadResultViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hH-ih-cGN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xih-zj-Hz2">
-                                <rect key="frame" x="10" y="248" width="355" height="130"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestResultImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-2R-NJS" customClass="test">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7Qw-Pm-mkn"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-5f-uCi">
+                                <rect key="frame" x="0.0" y="263" width="375" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="ZI4-fw-4lp"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zw6-ud-jkJ">
+                                <rect key="frame" x="41" y="441" width="275" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOT-K2-zSb">
+                                <rect key="frame" x="133" y="593" width="90" height="30"/>
+                                <state key="normal" title="Add Result"/>
+                                <connections>
+                                    <action selector="addSubjectBtnTapped:" destination="LzF-OS-IMD" eventType="touchUpInside" id="lZQ-mz-1uX"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UyF-yU-Vhp">
+                                <rect key="frame" x="10" y="483" width="355" height="90"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MB8-8t-uEn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVs-a4-Dz1">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Score" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uX0-I9-Ts8">
-                                        <rect key="frame" x="0.0" y="50" width="355" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Score" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ugm-1O-Eex">
+                                        <rect key="frame" x="0.0" y="30" width="355" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKN-w8-7sD">
-                                        <rect key="frame" x="0.0" y="100" width="355" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-tD-oQ2">
+                                        <rect key="frame" x="0.0" y="60" width="355" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFy-2R-NJS">
-                                <rect key="frame" x="67" y="41" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Xih-zj-Hz2" firstAttribute="leading" secondItem="pQn-ud-7uP" secondAttribute="leading" constant="10" id="HZP-VB-gCb"/>
-                            <constraint firstItem="pQn-ud-7uP" firstAttribute="trailing" secondItem="Xih-zj-Hz2" secondAttribute="trailing" constant="10" id="c0e-d2-3V2"/>
+                            <constraint firstItem="pQn-ud-7uP" firstAttribute="trailing" secondItem="cOT-K2-zSb" secondAttribute="trailing" constant="152" id="3Ne-kK-iAo"/>
+                            <constraint firstItem="Zw6-ud-jkJ" firstAttribute="centerX" secondItem="cOT-K2-zSb" secondAttribute="centerX" id="5NU-RA-cty"/>
+                            <constraint firstItem="pmm-5f-uCi" firstAttribute="leading" secondItem="4hH-ih-cGN" secondAttribute="leading" id="Pxo-Bb-QqP"/>
+                            <constraint firstItem="Zw6-ud-jkJ" firstAttribute="top" secondItem="pmm-5f-uCi" secondAttribute="bottom" constant="9" id="Rwo-yC-dYH"/>
+                            <constraint firstItem="cOT-K2-zSb" firstAttribute="leading" secondItem="pQn-ud-7uP" secondAttribute="leading" constant="133" id="TZv-iC-idQ"/>
+                            <constraint firstItem="Zw6-ud-jkJ" firstAttribute="leading" secondItem="pQn-ud-7uP" secondAttribute="leading" constant="41" id="aOz-Da-c8p"/>
+                            <constraint firstItem="cOT-K2-zSb" firstAttribute="top" secondItem="UyF-yU-Vhp" secondAttribute="bottom" constant="20" id="iey-CN-kFf"/>
+                            <constraint firstItem="pQn-ud-7uP" firstAttribute="bottom" secondItem="cOT-K2-zSb" secondAttribute="bottom" constant="44" id="o8p-Xv-6Gb"/>
+                            <constraint firstItem="QFy-2R-NJS" firstAttribute="top" secondItem="pQn-ud-7uP" secondAttribute="top" id="pGi-On-HCJ"/>
+                            <constraint firstItem="pQn-ud-7uP" firstAttribute="trailing" secondItem="UyF-yU-Vhp" secondAttribute="trailing" constant="10" id="rPe-l0-i5d"/>
+                            <constraint firstItem="pmm-5f-uCi" firstAttribute="leading" secondItem="QFy-2R-NJS" secondAttribute="leading" id="tnB-1X-lh9"/>
+                            <constraint firstItem="pmm-5f-uCi" firstAttribute="centerX" secondItem="UyF-yU-Vhp" secondAttribute="centerX" id="vQv-qa-qhl"/>
+                            <constraint firstItem="UyF-yU-Vhp" firstAttribute="leading" secondItem="pQn-ud-7uP" secondAttribute="leading" constant="10" id="x5p-kE-h5C"/>
+                            <constraint firstItem="pmm-5f-uCi" firstAttribute="top" secondItem="pQn-ud-7uP" secondAttribute="top" constant="199" id="y7s-hm-oPT"/>
+                            <constraint firstItem="pmm-5f-uCi" firstAttribute="trailing" secondItem="QFy-2R-NJS" secondAttribute="trailing" id="zI5-yc-8Nj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pQn-ud-7uP"/>
                     </view>
+                    <connections>
+                        <outlet property="subjectLabel" destination="Zw6-ud-jkJ" id="4SX-Xz-ajI"/>
+                        <outlet property="subjectPickerView" destination="pmm-5f-uCi" id="ZKj-jg-Uqd"/>
+                        <outlet property="testDateTextView" destination="hU2-tD-oQ2" id="Ujt-8I-qvK"/>
+                        <outlet property="testNameTextView" destination="hVs-a4-Dz1" id="t4m-2Y-FY5"/>
+                        <outlet property="testScoreTextView" destination="Ugm-1O-Eex" id="epY-KY-gxD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="De8-Ke-gpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-20"/>
+            <point key="canvasLocation" x="1652" y="-20.239880059970016"/>
         </scene>
         <!--Item-->
         <scene sceneID="f48-DK-MdF">
@@ -163,12 +204,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-mv-hJQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-mv-hJQ">
                                 <rect key="frame" x="50" y="104" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8O-XK-iCu">
+                                <rect key="frame" x="318" y="69" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TEST"/>
+                                <connections>
+                                    <segue destination="LzF-OS-IMD" kind="show" id="B6c-Gf-t5S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -421,4 +470,7 @@
             <point key="canvasLocation" x="-838" y="-20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TestResultImage" width="2100" height="1400"/>
+    </resources>
 </document>

@@ -28,6 +28,7 @@
 		4EF5AFD6204A8374005BD48E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFD5204A8374005BD48E /* Result.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
 		AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */; };
+		AA40B210204FDAB100BEF5D3 /* UploadResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */; };
 		AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		4EF5AFD0204955E1005BD48E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		4EF5AFD5204A8374005BD48E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResultViewController.swift; sourceTree = "<group>"; };
 		AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNotificationViewController.swift; sourceTree = "<group>"; };
 		AABAD51D20479DC20005FE5D /* TuitionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuitionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAD52020479DC20005FE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
 				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */,
 				00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */,
 				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
 				4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */,
@@ -362,6 +365,7 @@
 				AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */,
 				4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
+				AA40B210204FDAB100BEF5D3 /* UploadResultViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
 				AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */,
 				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
