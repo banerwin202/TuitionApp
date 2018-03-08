@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Notification {
+class NotificationClass {
     var uid : String = ""
     var title : String = ""
     var text : String = ""

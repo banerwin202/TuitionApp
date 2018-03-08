@@ -23,6 +23,8 @@ class TCProfileViewController: UIViewController {
     
     var students : [Student] = []
     
+    var selectedPage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
