@@ -52,16 +52,18 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
             drawerController.setDrawerState(.closed, animated: true)
         }
         
-        guard let vcToStudentProfile = storyboard?.instantiateViewController(withIdentifier: "TCProfileViewController") as? TCProfileViewController else {return}
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "TCProfileViewController") as? TCProfileViewController else {return}
         
         let selectedPage = pages[indexPath.row]
         
-        vcToStudentProfile.selectedPage = selectedPage
+        vc.selectedPage = selectedPage
         
         if selectedPage == "Student Profile" {
             notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"TCProfileViewController"])
         } else if selectedPage == "Set Notification" {
             notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"SendNotificationViewController"])
+        } else if selectedPage == "Upload Result" {
+            notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"UploadResultViewController"]) 
         }
         NotificationCenter.default.post(notification)
         

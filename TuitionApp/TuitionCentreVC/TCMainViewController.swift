@@ -36,16 +36,14 @@ class TCMainViewController: UIViewController {
         
         if userInfo == "TCProfileViewController" {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? TCProfileViewController else {return}
-            
             navigationController?.pushViewController(vc, animated: true)
         } else if userInfo == "SendNotificationViewController" {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? SendNotificationViewController else {return}
-            
             navigationController?.pushViewController(vc, animated: true)
-        
+        } else if userInfo == "UploadResultViewController" {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? UploadResultViewController else {return}
+            navigationController?.pushViewController(vc, animated: true)
         }
-        
-        
     }
 
 

@@ -233,8 +233,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wd7-mi-Gld">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wd7-mi-Gld">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeW-cQ-eEu">
                                     <size key="itemSize" width="174" height="192"/>
@@ -296,29 +296,24 @@
                         <constraints>
                             <constraint firstItem="wd7-mi-Gld" firstAttribute="leading" secondItem="E8R-Cj-OWr" secondAttribute="leading" id="1mB-b5-zn7"/>
                             <constraint firstItem="E8R-Cj-OWr" firstAttribute="bottom" secondItem="wd7-mi-Gld" secondAttribute="bottom" id="Doz-uS-Bj5"/>
-                            <constraint firstItem="wd7-mi-Gld" firstAttribute="top" secondItem="E8R-Cj-OWr" secondAttribute="top" id="Vp8-sf-908"/>
+                            <constraint firstItem="wd7-mi-Gld" firstAttribute="top" secondItem="E8R-Cj-OWr" secondAttribute="top" id="f2x-aV-hna"/>
                             <constraint firstItem="E8R-Cj-OWr" firstAttribute="trailing" secondItem="wd7-mi-Gld" secondAttribute="trailing" id="wvv-wI-T58"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E8R-Cj-OWr"/>
                     </view>
                     <navigationItem key="navigationItem" id="btP-LS-psU">
-                        <leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Logout" id="gzB-aT-ka7">
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="DMZ-jR-z0U" id="GcG-Qk-Zbr"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="pha-xK-voR">
                                 <connections>
                                     <segue destination="a34-60-JAz" kind="show" id="lHn-m8-4zu"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Set Notifications" id="ry3-Yg-Yef">
-                                <connections>
-                                    <segue destination="nTb-oe-odJ" kind="show" id="gcr-C5-rEU"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="gzB-aT-ka7">
-                            <connections>
-                                <action selector="logoutBtnTapped:" destination="DMZ-jR-z0U" id="GcG-Qk-Zbr"/>
-                            </connections>
-                        </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="wd7-mi-Gld" id="PwO-cC-RH6"/>
@@ -485,7 +480,7 @@
         <!--Upload Result View Controller-->
         <scene sceneID="FVH-eP-7rO">
             <objects>
-                <viewController id="2wO-mF-q4i" customClass="UploadResultViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadResultViewController" id="2wO-mF-q4i" customClass="UploadResultViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vQ-Mb-pz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
