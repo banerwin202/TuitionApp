@@ -35,6 +35,7 @@
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
 		AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */; };
 		AA40B210204FDAB100BEF5D3 /* UploadResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */; };
+		AA442F3120512B0E00C9C08C /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
 		AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
 		AABAD52620479DC20005FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAD52420479DC20005FE5D /* Main.storyboard */; };
@@ -46,7 +47,6 @@
 		AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5382047AADE0005FE5D /* NotificationViewController.swift */; };
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
-		AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3B2F5D204FC4BF002A4485 /* CreateStudentViewController.swift in Sources */,
-				AACDB9AA204949E7003B0E45 /* StudentViewController.swift in Sources */,
 				4EADF14D204BDFE3009B5650 /* AttendanceTableViewCell.swift in Sources */,
 				AABAD5372047AA9C0005FE5D /* ProfileViewController.swift in Sources */,
 				4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */,
@@ -381,6 +380,7 @@
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
 				4EF5AFC920490C86005BD48E /* Parents.swift in Sources */,
+				AA442F3120512B0E00C9C08C /* StudentViewController.swift in Sources */,
 				00D86722205116BD00AA5E80 /* UploadScheduleViewController.swift in Sources */,
 				00C48B79204E969A00FE26F2 /* TCProfileCollectionViewCell.swift in Sources */,
 				00C48B7D204FB5AC00FE26F2 /* DrawerViewController.swift in Sources */,
