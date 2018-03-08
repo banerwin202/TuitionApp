@@ -23,7 +23,7 @@ class DrawerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pages = ["Student Profile", "Set Notification", "Upload Result", "Upload Subject/Schedule"]
+        pages = ["Student Profile", "Set Notification", "Upload Result", "Upload Subject", "Upload Schedule"]
         
     }
     
@@ -64,6 +64,10 @@ extension DrawerViewController : UITableViewDataSource, UITableViewDelegate {
             notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"SendNotificationViewController"])
         } else if selectedPage == "Upload Result" {
             notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"UploadResultViewController"]) 
+        } else if selectedPage == "Upload Subject" {
+            notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"UploadSubjectViewController"])
+        } else if selectedPage == "Upload Schedule" {
+            notification = Notification(name: Notification.Name(rawValue: "Navigate"), object: nil, userInfo: ["Name":"UploadScheduleViewController"])
         }
         NotificationCenter.default.post(notification)
         

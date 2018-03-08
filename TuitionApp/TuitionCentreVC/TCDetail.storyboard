@@ -566,6 +566,36 @@
             </objects>
             <point key="canvasLocation" x="1209" y="-823"/>
         </scene>
+        <!--Upload Subject View Controller-->
+        <scene sceneID="vhi-Zt-1ID">
+            <objects>
+                <viewController storyboardIdentifier="UploadSubjectViewController" id="4tV-vv-yvH" customClass="UploadSubjectViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EpI-PM-3c9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="a4H-zl-Lrd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prP-jk-31v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2080" y="-819"/>
+        </scene>
+        <!--Upload Schedule View Controller-->
+        <scene sceneID="14y-EO-v7n">
+            <objects>
+                <viewController storyboardIdentifier="UploadScheduleViewController" id="fs9-wQ-MaT" customClass="UploadScheduleViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WhN-gc-eoU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xp1-Bj-w9G"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duM-VG-0u6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2908" y="-815"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TestResultImage" width="2100" height="1400"/>

@@ -43,6 +43,12 @@ class TCMainViewController: UIViewController {
         } else if userInfo == "UploadResultViewController" {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? UploadResultViewController else {return}
             navigationController?.pushViewController(vc, animated: true)
+        } else if userInfo == "UploadSubjectViewController" {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? UploadSubjectViewController else {return}
+            navigationController?.pushViewController(vc, animated: true)
+        } else if userInfo == "UploadScheduleViewController" {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: userInfo) as? UploadScheduleViewController else {return}
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 
