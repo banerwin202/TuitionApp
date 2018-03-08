@@ -15,7 +15,6 @@
         <!--Notification View Controller-->
         <scene sceneID="g7N-UN-RZb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ntg-CN-fxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="NotificationViewController" id="MM0-Hh-dd5" customClass="NotificationViewController" customModule="TuitionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZf-mL-ZjF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -66,6 +65,7 @@
                         <outlet property="tableView" destination="Ne5-fK-oeS" id="PFL-Vf-m23"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntg-CN-fxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1110" y="456"/>
         </scene>
