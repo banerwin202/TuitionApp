@@ -51,7 +51,8 @@ class SignInViewController: UIViewController {
             
             if Auth.auth().currentUser != nil && a == snapshot.key {
                 let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+//                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "TCTakeAttendanceViewController") as? TCTakeAttendanceViewController else {return}
                 self.present(navVC, animated: true, completion: nil)
             }
         }

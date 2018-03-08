@@ -19,19 +19,26 @@ class AddSubjectViewController: UIViewController {
     @IBOutlet weak var subjectSelectedLabel: UILabel!
     @IBOutlet weak var addSubjectButton: UIButton!
     
-    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
+//    let subject = ["Mathematics","Chemistry","XCode","Physics","Moral"]
+    var subject : [String] = []
     var index : Int = 0
     var ref: DatabaseReference!
     var selectedStudent : Student = Student()
+    var subjects : [Subject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        
         subjectPickerView.dataSource = self
         subjectPickerView.delegate = self
         ref = Database.database().reference()
-
+        
         studentNameLabel.text = selectedStudent.name
+        
+        observeSubject()
+        observeFirebase()
+//        tableView.reloadData()
     }
 
     @IBAction func addSubjectButtonTapped(_ sender: Any) {
@@ -40,13 +47,45 @@ class AddSubjectViewController: UIViewController {
         let selectedSubject = subject[selectedIndex]
         print(selectedSubject)
         let userPost: [String:Any] = [selectedSubject: true]
-        self.ref.child("Tuition").child("Student").child("StudentID").child("Subjects").updateChildValues(userPost)
+        self.ref.child("Tuition").child("Student").child(selectedStudent.uid).child("Subjects").updateChildValues(userPost)
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    func observeSubject() {
+        ref.child("Tuition").child("Subject").observe(.childAdded) { (snapshot) in
+            let subjectObserved = snapshot.key
+            print("\(subjectObserved) is observed")
+            self.subject.append(subjectObserved)
+            print(self.subject)
+            self.subjectPickerView.reloadComponent(0)
+        }
+    }
+    
+    func observeFirebase() {
+        ref.child("Tuition").child("Student").child(selectedStudent.uid).child("Subjects").observe(.childAdded) { (snapshot) in
+            
+            let subject = Subject(name: snapshot.key)
+            self.subjects.append(subject)
+            let indexPath = IndexPath(row: self.subjects.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
+            
+//            if let subjectDict = snapshot.value as? [String:Any] {
+//                let subjectKey = subjectDict.keys
+//
+//                for sub in subjectKey {
+//                    let subject = Subject(name: sub)
+//                    self.subjects.append(subject)
+//                    let indexPath = IndexPath(row: self.subjects.count - 1, section: 0)
+//                    self.tableView.insertRows(at: [indexPath], with: .automatic)
+//                    print(self.subjects)
+//                }
+//                self.tableView.reloadData()
+//            }
+        }
+    }
 }
 
 extension AddSubjectViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -70,12 +109,13 @@ extension AddSubjectViewController: UIPickerViewDataSource, UIPickerViewDelegate
 
 extension AddSubjectViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return subjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel =
+        cell.textLabel?.text = subjects[indexPath.row].name
+        
         return cell
     }
     

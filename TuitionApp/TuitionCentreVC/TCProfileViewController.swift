@@ -52,7 +52,7 @@ class TCProfileViewController: UIViewController {
                 let name = dict["Name"] as? String,
                 let studentImageURL = dict["Image"] as? String {
                 
-                let student = Student(age: age, name: name, studentImageURL: studentImageURL)
+                let student = Student(age: age, name: name, studentImageURL: studentImageURL, studentUID: snapshot.key)
                 
                 DispatchQueue.main.async {
                     self.collectionView.performBatchUpdates({ 

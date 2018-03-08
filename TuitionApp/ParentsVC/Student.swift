@@ -30,11 +30,12 @@ class Student {
         self.results = dict["result"] as? String ?? "No Result"
     }
     
-    init(age: Int, name: String, studentImageURL: String) {
+    init(age: Int, name: String, studentImageURL: String, studentUID: String) {
         
         self.age = age
         self.name = name
         self.url = studentImageURL
+        self.uid = studentUID
         
     }
 
