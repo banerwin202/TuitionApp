@@ -12,6 +12,7 @@
 		00C48B7D204FB5AC00FE26F2 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C48B7C204FB5AC00FE26F2 /* DrawerViewController.swift */; };
 		00D86720205116AC00AA5E80 /* UploadSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8671F205116AC00AA5E80 /* UploadSubjectViewController.swift */; };
 		00D86722205116BD00AA5E80 /* UploadScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D86721205116BD00AA5E80 /* UploadScheduleViewController.swift */; };
+		00D867462052339D00AA5E80 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D867452052339D00AA5E80 /* CreateEventViewController.swift */; };
 		00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDC2047D80700A4C596 /* Subject.swift */; };
 		00D9FEDF2048019000A4C596 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEDE2048019000A4C596 /* Student.swift */; };
 		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
@@ -55,6 +56,7 @@
 		00C48B7C204FB5AC00FE26F2 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		00D8671F205116AC00AA5E80 /* UploadSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSubjectViewController.swift; sourceTree = "<group>"; };
 		00D86721205116BD00AA5E80 /* UploadScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadScheduleViewController.swift; sourceTree = "<group>"; };
+		00D867452052339D00AA5E80 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		00D9FEDC2047D80700A4C596 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		00D9FEDE2048019000A4C596 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		00D9FEE020480D4000A4C596 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
 				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
 				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				00D867452052339D00AA5E80 /* CreateEventViewController.swift */,
 				00D8671F205116AC00AA5E80 /* UploadSubjectViewController.swift */,
 				00D86721205116BD00AA5E80 /* UploadScheduleViewController.swift */,
 				AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */,
@@ -379,6 +382,7 @@
 				4E3B2F5F20501476002A4485 /* TCTakeAttendanceViewController.swift in Sources */,
 				4EF5AFCD2049185D005BD48E /* SignInViewController.swift in Sources */,
 				00D9FEDD2047D80700A4C596 /* Subject.swift in Sources */,
+				00D867462052339D00AA5E80 /* CreateEventViewController.swift in Sources */,
 				4EF5AFC920490C86005BD48E /* Parents.swift in Sources */,
 				AA442F3120512B0E00C9C08C /* StudentViewController.swift in Sources */,
 				00D86722205116BD00AA5E80 /* UploadScheduleViewController.swift in Sources */,
