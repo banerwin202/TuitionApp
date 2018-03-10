@@ -46,16 +46,16 @@ class SignInViewController: UIViewController {
     }
     
     func TCUserChecking () {
-        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
-            guard let a = Auth.auth().currentUser?.uid else {return}
-            
-            if Auth.auth().currentUser != nil && a == snapshot.key {
-                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-//                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
-                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
-                self.present(navVC, animated: true, completion: nil)
-            }
-        }
+//        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
+//            guard let a = Auth.auth().currentUser?.uid else {return}
+//            
+//            if Auth.auth().currentUser != nil && a == snapshot.key {
+//                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
+////                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+//                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
+//                self.present(navVC, animated: true, completion: nil)
+//            }
+//        }
     }
     
     @objc func signInButtonTapped() {
