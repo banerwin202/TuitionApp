@@ -31,18 +31,26 @@ class TCProfileViewController: UIViewController {
         ref = Database.database().reference()
         
         loadDetails()
-
     }
     
     @IBAction func logoutBtnTapped(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-        } catch {
+            do{
+                try Auth.auth().signOut()
+                let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+                
+                guard let navVC = sb.instantiateViewController(withIdentifier: "mainTabBarController") as? UITabBarController else {return}
+                
+                present(navVC, animated: true, completion: nil)
+               
+            } catch {
             
+                
+        
         }
         
+
     }
+    
     
     func loadDetails() {
         ref.child("Tuition").child("Student").observe(.childAdded) { (snapshot) in

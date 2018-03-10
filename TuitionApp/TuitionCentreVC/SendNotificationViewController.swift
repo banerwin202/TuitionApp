@@ -19,6 +19,7 @@ class SendNotificationViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+    
     @IBAction func sendBtnTapped(_ sender: Any) {
         
         let content = UNMutableNotificationContent()
@@ -38,6 +39,7 @@ class SendNotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        
 
     }
 
