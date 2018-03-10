@@ -17,6 +17,7 @@
 		00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9FEE020480D4000A4C596 /* CustomCell.swift */; };
 		4E3B2F5D204FC4BF002A4485 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */; };
 		4E3B2F5F20501476002A4485 /* TCTakeAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B2F5E20501476002A4485 /* TCTakeAttendanceViewController.swift */; };
+		4E3B2F8320528105002A4485 /* TCAttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B2F8220528105002A4485 /* TCAttendanceTableViewCell.swift */; };
 		4E7641612047B9980051D42E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641602047B9970051D42E /* SignUpViewController.swift */; };
 		4E7641632047F3850051D42E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641622047F3850051D42E /* Extension.swift */; };
 		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
@@ -60,6 +61,7 @@
 		00D9FEE020480D4000A4C596 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1C112D36712946D5494F8A17 /* Pods-TuitionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4E3B2F5E20501476002A4485 /* TCTakeAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCTakeAttendanceViewController.swift; sourceTree = "<group>"; };
+		4E3B2F8220528105002A4485 /* TCAttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		4E7641602047B9970051D42E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4E7641622047F3850051D42E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignUpViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				0081AD69204FBFCE0051A38E /* TCMainViewController.swift */,
 				00C48B7C204FB5AC00FE26F2 /* DrawerViewController.swift */,
 				4E3B2F5E20501476002A4485 /* TCTakeAttendanceViewController.swift */,
+				4E3B2F8220528105002A4485 /* TCAttendanceTableViewCell.swift */,
 				00C48B78204E969A00FE26F2 /* TCProfileCollectionViewCell.swift */,
 				4E9D2602204E8E78000600DC /* TCProfileViewController.swift */,
 				4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */,
@@ -375,6 +378,7 @@
 				00D9FEDF2048019000A4C596 /* Student.swift in Sources */,
 				4EF5AFD6204A8374005BD48E /* Result.swift in Sources */,
 				AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */,
+				4E3B2F8320528105002A4485 /* TCAttendanceTableViewCell.swift in Sources */,
 				00D86720205116AC00AA5E80 /* UploadSubjectViewController.swift in Sources */,
 				4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */,
 				4E3B2F5F20501476002A4485 /* TCTakeAttendanceViewController.swift in Sources */,

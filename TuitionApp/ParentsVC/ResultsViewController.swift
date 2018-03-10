@@ -33,7 +33,6 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        subJectLabel.text = selectedSubject.name
         ref = Database.database().reference()
         observeFirebase()
     }
@@ -41,7 +40,6 @@ class ResultsViewController: UIViewController {
     func observeFirebase() {
         let a = ref.child("Tuition").child("Result").child(selectedSubject.name).child(selectedStudent.uid)
         print("\(a) is student IDDDDD")
-        
         ref.child("Tuition").child("Result").child(selectedSubject.name).child(selectedStudent.uid).observe(.childAdded) { (snapshot) in
 //            if snapshot.hasChild("UID") {
 //
@@ -71,9 +69,6 @@ class ResultsViewController: UIViewController {
 //            completion(dict)
 //
 //        }
-
-//
-////        print("heheheh \(math) hellllllll yapyoyokb")
 //
 //        ref.child("Tuition").child("Result").observe(.childAdded) { (snapshot) in
 //
@@ -121,7 +116,6 @@ extension ResultsViewController : UITableViewDataSource {
         cell.commentTextView.text = result.comment
         return cell
     }
-
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        self.tableView.estimatedRowHeight = 80

@@ -52,33 +52,11 @@ class SignInViewController: UIViewController {
             if Auth.auth().currentUser != nil && a == snapshot.key {
                 let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
 //                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
-                guard let navVC = sb.instantiateViewController(withIdentifier: "TCTakeAttendanceViewController") as? TCTakeAttendanceViewController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
                 self.present(navVC, animated: true, completion: nil)
             }
         }
     }
-    
-
-//    @objc func signInButtonTapped() {
-//                guard let email = emailTextField.text,
-//                    let password = passwordTextField.text else {return}
-//
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//            if let validError = error {
-//                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
-//            }
-//
-//            if user != nil {
-//                self.emailTextField.text = ""
-//                self.passwordTextField.text = ""
-//                let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
-//                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
-//                self.present(navVC, animated: true, completion: nil)
-//
-//            }
-//        }
-//
-//    }
     
     @objc func signInButtonTapped() {
         var userIsTuitionCheck : Bool = false

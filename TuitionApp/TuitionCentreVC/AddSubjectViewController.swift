@@ -38,7 +38,6 @@ class AddSubjectViewController: UIViewController {
         
         observeSubject()
         observeFirebase()
-//        tableView.reloadData()
     }
 
     @IBAction func addSubjectButtonTapped(_ sender: Any) {
@@ -46,8 +45,11 @@ class AddSubjectViewController: UIViewController {
         let selectedIndex = subjectPickerView.selectedRow(inComponent: 0)
         let selectedSubject = subject[selectedIndex]
         print(selectedSubject)
+        
         let userPost: [String:Any] = [selectedSubject: true]
+        let userPost2: [String:Any] = [selectedStudent.uid: selectedStudent.name]
         self.ref.child("Tuition").child("Student").child(selectedStudent.uid).child("Subjects").updateChildValues(userPost)
+        self.ref.child("Tuition").child("Subject").child(selectedSubject).child("Students").updateChildValues(userPost2)
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {

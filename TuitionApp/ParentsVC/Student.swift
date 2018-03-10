@@ -38,5 +38,10 @@ class Student {
         self.uid = studentUID
         
     }
+    
+    init(uid: String, name: String) {
+        self.uid = uid
+        self.name = name
+    }
 
 }

@@ -434,28 +434,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-UI-MFo">
-                                <rect key="frame" x="0.0" y="31" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B4k-e3-bpC">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="PxX-Q9-P6J" detailTextLabel="xwn-lh-cON" style="IBUITableViewCellStyleSubtitle" id="PCy-WB-cSz" customClass="TCAttendanceTableViewCell" customModule="TuitionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PCy-WB-cSz" id="E2y-J7-dbD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PxX-Q9-P6J">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xwn-lh-cON">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHs-Yw-Zi6">
+                                <rect key="frame" x="0.0" y="52" width="375" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B4k-e3-bpC">
-                                <rect key="frame" x="0.0" y="189" width="375" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRd-Yl-Dpg">
+                                <rect key="frame" x="170" y="100" width="35" height="30"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="filterButtonTapped:" destination="gOw-Hg-D2f" eventType="touchUpInside" id="zuF-dT-gmO"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-UI-MFo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m2H-c7-n9c">
+                                <rect key="frame" x="130" y="150" width="115" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvX-2E-SFB">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Attend"/>
+                                        <connections>
+                                            <action selector="attendButtonTapped:" destination="gOw-Hg-D2f" eventType="touchUpInside" id="uze-Gl-kJE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyz-bQ-t3A">
+                                        <rect key="frame" x="66" y="0.0" width="49" height="30"/>
+                                        <state key="normal" title="Absent"/>
+                                        <connections>
+                                            <action selector="absentButtonTapped:" destination="gOw-Hg-D2f" eventType="touchUpInside" id="sws-cn-fUB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JTW-wT-SIm" firstAttribute="bottom" secondItem="B4k-e3-bpC" secondAttribute="bottom" id="Bhc-FT-Kfy"/>
-                            <constraint firstItem="B4k-e3-bpC" firstAttribute="leading" secondItem="JTW-wT-SIm" secondAttribute="leading" id="Km5-lD-GsX"/>
-                            <constraint firstItem="JTW-wT-SIm" firstAttribute="trailing" secondItem="B4k-e3-bpC" secondAttribute="trailing" id="UME-MH-MSe"/>
+                            <constraint firstItem="QRd-Yl-Dpg" firstAttribute="top" secondItem="DHs-Yw-Zi6" secondAttribute="bottom" constant="18" id="2zC-8I-B82"/>
+                            <constraint firstItem="m2H-c7-n9c" firstAttribute="centerX" secondItem="b4V-Yp-EEn" secondAttribute="centerX" id="5T1-Uj-X8v"/>
+                            <constraint firstItem="m2H-c7-n9c" firstAttribute="top" secondItem="QRd-Yl-Dpg" secondAttribute="bottom" constant="20" id="6j9-87-pJK"/>
+                            <constraint firstItem="aeK-UI-MFo" firstAttribute="top" secondItem="JTW-wT-SIm" secondAttribute="top" id="BMZ-Gp-bqM"/>
+                            <constraint firstItem="B4k-e3-bpC" firstAttribute="bottom" secondItem="JTW-wT-SIm" secondAttribute="bottom" id="BS8-oc-8wx"/>
+                            <constraint firstItem="aeK-UI-MFo" firstAttribute="leading" secondItem="b4V-Yp-EEn" secondAttribute="leading" id="CoX-9E-pzt"/>
+                            <constraint firstItem="B4k-e3-bpC" firstAttribute="trailing" secondItem="JTW-wT-SIm" secondAttribute="trailing" id="LOO-QU-ZaC"/>
+                            <constraint firstItem="B4k-e3-bpC" firstAttribute="leading" secondItem="JTW-wT-SIm" secondAttribute="leading" id="RK7-oA-2Mk"/>
+                            <constraint firstItem="DHs-Yw-Zi6" firstAttribute="leading" secondItem="b4V-Yp-EEn" secondAttribute="leading" id="Tzo-xU-2oe"/>
+                            <constraint firstItem="DHs-Yw-Zi6" firstAttribute="top" secondItem="aeK-UI-MFo" secondAttribute="bottom" constant="2" id="UYS-hS-4iQ"/>
+                            <constraint firstItem="QRd-Yl-Dpg" firstAttribute="centerX" secondItem="b4V-Yp-EEn" secondAttribute="centerX" id="Vjr-Sf-IWE"/>
+                            <constraint firstItem="JTW-wT-SIm" firstAttribute="trailing" secondItem="aeK-UI-MFo" secondAttribute="trailing" id="eRn-8a-vZg"/>
+                            <constraint firstItem="B4k-e3-bpC" firstAttribute="top" secondItem="m2H-c7-n9c" secondAttribute="bottom" constant="20" id="jWw-ue-C7q"/>
+                            <constraint firstItem="JTW-wT-SIm" firstAttribute="trailing" secondItem="DHs-Yw-Zi6" secondAttribute="trailing" id="vTX-uS-UuZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JTW-wT-SIm"/>
                     </view>
                     <connections>
-                        <outlet property="txtDatePicker" destination="aeK-UI-MFo" id="p55-it-e7y"/>
+                        <outlet property="datePickerTextField" destination="aeK-UI-MFo" id="p55-it-e7y"/>
+                        <outlet property="subjectPickerTextField" destination="DHs-Yw-Zi6" id="Lfl-Sc-a5f"/>
+                        <outlet property="tableView" destination="B4k-e3-bpC" id="imA-et-3DS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbq-9f-wIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
