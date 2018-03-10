@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class AttendanceViewController: UIViewController {
 
@@ -18,9 +20,27 @@ class AttendanceViewController: UIViewController {
         }
     }
     
+    var ref : DatabaseReference!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ref = Database.database().reference()
+        observeFirebase()
+
+    }
+    
+    func observeFirebase() {
+        ref.child("Attendance").observe(.childAdded) { (snapshot) in
+      
+            guard let resultDict = snapshot.value as? [String:Any] else {return}
+            let result = Result(uid: snapshot.key, userDict: resultDict)
+            
+            DispatchQueue.main.async {
+//                self.results.append(result)
+//                let indexPath = IndexPath(row: self.results.count - 1, section: 0)
+//                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
     
 }
