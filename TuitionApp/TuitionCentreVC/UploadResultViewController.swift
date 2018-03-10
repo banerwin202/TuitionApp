@@ -27,6 +27,8 @@ class UploadResultViewController: UIViewController {
     @IBOutlet weak var testDateTextField: UITextField!
     @IBAction func addSubjectBtnTapped(_ sender: Any) {
         addResult()
+        
+        showAlert(withTitle: "Congratulations!!!", message: "You have successfully uploaded the results")
     }
     
     var ref: DatabaseReference!
@@ -50,6 +52,7 @@ class UploadResultViewController: UIViewController {
         let testScore = testScoreTextField.text,
         let testDate = testDateTextField.text,
         let studentID = studentIDTextView.text   else {return}
+        
         
         let userPost: [String:Any] = ["TestName" : testName, "Score" : testScore, "Date" : testDate]
             
