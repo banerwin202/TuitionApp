@@ -22,7 +22,6 @@
 		4E7641632047F3850051D42E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7641622047F3850051D42E /* Extension.swift */; };
 		4E9D25DB204CF9C6000600DC /* TCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */; };
 		4E9D25DD204CF9D6000600DC /* TCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */; };
-		4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */; };
 		4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2600204E816D000600DC /* AddSubjectViewController.swift */; };
 		4E9D2603204E8E78000600DC /* TCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D2602204E8E78000600DC /* TCProfileViewController.swift */; };
 		4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EADF149204B9CD5009B5650 /* AttendanceViewController.swift */; };
@@ -35,7 +34,6 @@
 		4EF5AFD6204A8374005BD48E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5AFD5204A8374005BD48E /* Result.swift */; };
 		980EF4136E360A583630E097 /* Pods_TuitionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */; };
 		AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3C6DCF204F8E1D00DF6FA7 /* Notification.swift */; };
-		AA40B210204FDAB100BEF5D3 /* UploadResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */; };
 		AA442F3120512B0E00C9C08C /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDB9A9204949E7003B0E45 /* StudentViewController.swift */; };
 		AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C12D5204E3B44001B3676 /* SendNotificationViewController.swift */; };
 		AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD52020479DC20005FE5D /* AppDelegate.swift */; };
@@ -48,6 +46,8 @@
 		AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5382047AADE0005FE5D /* NotificationViewController.swift */; };
 		AABAD53F2047AB0F0005FE5D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */; };
 		AABAD5432047AD250005FE5D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */; };
+		AAEDB8C6205234E90013CABF /* UploadResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40B20F204FDAB100BEF5D3 /* UploadResultViewController.swift */; };
+		AAEDB8CC20527BEB0013CABF /* TCDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB8CB20527BEB0013CABF /* TCDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,6 @@
 		4E7641622047F3850051D42E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignUpViewController.swift; sourceTree = "<group>"; };
 		4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSignInViewController.swift; sourceTree = "<group>"; };
-		4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TCDetail.storyboard; sourceTree = "<group>"; };
 		4E9D25E0204CFEDE000600DC /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
 		4E9D2600204E816D000600DC /* AddSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
 		4E9D2602204E8E78000600DC /* TCProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCProfileViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		AABAD53E2047AB0F0005FE5D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		AABAD5422047AD250005FE5D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		AACDB9A9204949E7003B0E45 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		AAEDB8CB20527BEB0013CABF /* TCDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TCDetail.storyboard; sourceTree = "<group>"; };
 		ACC4DDBA3E00FA1DB08133D5 /* Pods_TuitionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuitionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32D36A3EE713C044BB1E531 /* Pods-TuitionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuitionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuitionApp/Pods-TuitionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 			children = (
 				4E9D25DA204CF9C6000600DC /* TCSignUpViewController.swift */,
 				4E9D25DC204CF9D6000600DC /* TCSignInViewController.swift */,
-				4E9D25DE204CFE4C000600DC /* TCDetail.storyboard */,
+				AAEDB8CB20527BEB0013CABF /* TCDetail.storyboard */,
 				00D867452052339D00AA5E80 /* CreateEventViewController.swift */,
 				00D8671F205116AC00AA5E80 /* UploadSubjectViewController.swift */,
 				00D86721205116BD00AA5E80 /* UploadScheduleViewController.swift */,
@@ -283,7 +283,7 @@
 				AABAD5332047A23D0005FE5D /* GoogleService-Info.plist in Resources */,
 				4EF5AFD2204955E1005BD48E /* ResultTableViewCell.xib in Resources */,
 				AABAD52820479DC20005FE5D /* Assets.xcassets in Resources */,
-				4E9D25DF204CFE4C000600DC /* TCDetail.storyboard in Resources */,
+				AAEDB8CC20527BEB0013CABF /* TCDetail.storyboard in Resources */,
 				4EADF14E204BDFE3009B5650 /* AttendanceTableViewCell.xib in Resources */,
 				AABAD5352047A81B0005FE5D /* Detail.storyboard in Resources */,
 				AABAD52620479DC20005FE5D /* Main.storyboard in Resources */,
@@ -391,11 +391,11 @@
 				AA9C12D6204E3B44001B3676 /* SendNotificationViewController.swift in Sources */,
 				4E9D2601204E816D000600DC /* AddSubjectViewController.swift in Sources */,
 				AABAD5392047AADE0005FE5D /* NotificationViewController.swift in Sources */,
-				AA40B210204FDAB100BEF5D3 /* UploadResultViewController.swift in Sources */,
 				AABAD52120479DC20005FE5D /* AppDelegate.swift in Sources */,
 				AA3C6DD0204F8E1D00DF6FA7 /* Notification.swift in Sources */,
 				00D9FEE120480D4000A4C596 /* CustomCell.swift in Sources */,
 				4EF5AFD1204955E1005BD48E /* ResultTableViewCell.swift in Sources */,
+				AAEDB8C6205234E90013CABF /* UploadResultViewController.swift in Sources */,
 				4E7641632047F3850051D42E /* Extension.swift in Sources */,
 				4EADF14A204B9CD5009B5650 /* AttendanceViewController.swift in Sources */,
 				4E9D2603204E8E78000600DC /* TCProfileViewController.swift in Sources */,

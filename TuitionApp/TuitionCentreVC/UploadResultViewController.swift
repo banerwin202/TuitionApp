@@ -25,6 +25,7 @@ class UploadResultViewController: UIViewController {
     @IBOutlet weak var testScoreTextField: UITextField!
     @IBOutlet weak var testNameTextField: UITextField!
     @IBOutlet weak var testDateTextField: UITextField!
+    
     @IBAction func addSubjectBtnTapped(_ sender: Any) {
         addResult()
         
