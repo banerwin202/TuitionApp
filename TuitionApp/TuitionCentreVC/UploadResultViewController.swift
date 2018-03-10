@@ -20,12 +20,15 @@ class UploadResultViewController: UIViewController {
            subjectPickerView.delegate = self
         }
     }
-    @IBOutlet weak var testNameTextView: UITextField!
-    @IBOutlet weak var testScoreTextView: UITextField!
-    @IBOutlet weak var testDateTextView: UITextField!
     @IBOutlet weak var subjectLabel: UILabel!
-    
+    @IBOutlet weak var studentIDTextView: UITextField!
+    @IBOutlet weak var testScoreTextField: UITextField!
+    @IBOutlet weak var testNameTextField: UITextField!
+    @IBOutlet weak var testDateTextField: UITextField!
     @IBAction func addSubjectBtnTapped(_ sender: Any) {
+        addResult()
+        
+        showAlert(withTitle: "Congratulations!!!", message: "You have successfully uploaded the results")
     }
     
     var ref: DatabaseReference!
@@ -43,15 +46,18 @@ class UploadResultViewController: UIViewController {
         
     }
     
-    func addSubject() {
-        guard let testName = testNameTextView.text,
+    func addResult() {
+        guard let testName = testNameTextField.text,
         let subjectLabel = subjectLabel.text,
-        let testScore = testScoreTextView.text,
-        let testDate = testDateTextView.text else {return}
+        let testScore = testScoreTextField.text,
+        let testDate = testDateTextField.text,
+        let studentID = studentIDTextView.text   else {return}
+        
         
         let userPost: [String:Any] = ["TestName" : testName, "Score" : testScore, "Date" : testDate]
+            
         
-//        self.ref.child(<#T##pathString: String##String#>)
+        self.ref.child("Tuition").child("Result").child(subjectLabel).child(studentID).setValue(userPost)
     }
     
     

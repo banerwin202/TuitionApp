@@ -1,21 +1,19 @@
 //
-//  UploadSubjectViewController.swift
+//  CreateEventViewController.swift
 //  TuitionApp
 //
-//  Created by Terence Chua on 08/03/2018.
+//  Created by Terence Chua on 09/03/2018.
 //  Copyright © 2018 Ban Er Win. All rights reserved.
 //
 
 import UIKit
 
-class UploadSubjectViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+class CreateEventViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
