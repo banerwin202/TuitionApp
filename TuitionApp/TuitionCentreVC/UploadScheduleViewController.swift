@@ -280,6 +280,7 @@ extension UploadScheduleViewController {
             self.formatter.dateFormat = "yyyy MM d"
             
             if let dict = snapshot.value as? [String:[String:Any]] {
+                eventDict.removeAll()
                 for (_, v) in dict {
                     if let dateString = v["Date"] as? String,
                         let date = self.formatter.date(from: dateString),
@@ -287,6 +288,7 @@ extension UploadScheduleViewController {
                         let subject = v["Subject"] as? String {
                         
                         let subjectName = subject + " " + eventType
+                        
                         
                         if eventDict[date] != nil{
                             //correctDate.append(subjectName)
@@ -299,6 +301,7 @@ extension UploadScheduleViewController {
                         //eventDict[date] = array
                     }
                     completion(eventDict)
+                    
                 }
             }
         }
@@ -321,6 +324,11 @@ extension UploadScheduleViewController {
                 }
                 
                 DispatchQueue.main.async {
+//                    formatter.dateFormat =
+//                    guard let selectedDateFormat = self.formatter.date(from: self.dateNumberStr) else {return}
+//                    self.calendarView.selectDates([selectedDateFormat])
+
+                    
                     if self.firstTimeChecker == true {
                         self.calendarView.reloadData()
                         self.calendarView.selectDates([Date()])
