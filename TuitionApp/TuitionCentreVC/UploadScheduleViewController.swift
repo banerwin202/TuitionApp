@@ -11,12 +11,12 @@ import FirebaseDatabase
 import JTAppleCalendar
 
 class UploadScheduleViewController: UIViewController {
-
+    
     var testCalendar = Calendar(identifier: .gregorian)
     
     let preDateSelectable : Bool = true
     
-//    var subjects : [Subject] = []
+    //    var subjects : [Subject] = []
     
     var eventArray : [String] = []
     
@@ -27,10 +27,13 @@ class UploadScheduleViewController: UIViewController {
     let formatter = DateFormatter()
     
     var monthText = ""
+    var yearText = ""
     
     var selectedDate = ""
     
     var firstTimeChecker = true
+    
+    var dateNumberStr = ""
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
@@ -51,7 +54,7 @@ class UploadScheduleViewController: UIViewController {
     
     let todaysDate = Date()
     
-    var eventsFromTheServer : [String:String] = [:]
+    var eventsFromTheServer : [String:[String]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +68,6 @@ class UploadScheduleViewController: UIViewController {
         setUpCalendarView()
         
         reloadNewMonthEvent()
-        
         
         
     }
@@ -150,52 +152,47 @@ class UploadScheduleViewController: UIViewController {
     }
     
     
-//    //SUBJECT NAMES
-//    func getSubjectName() {
-//        ref.child("Tuition").child("Student").child("StudentID").child("Subjects").observe(.value) { (snapshot) in
-//
-//            self.subjects.removeAll()
-//
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//                let key = snap.key
-//
-//                let subjectName = Subject(name: key)
-//
-//                self.subjects.append(subjectName)
-//            }
-//            self.tableView.reloadData()
-//        }
-//    }
+    //    //SUBJECT NAMES
+    //    func getSubjectName() {
+    //        ref.child("Tuition").child("Student").child("StudentID").child("Subjects").observe(.value) { (snapshot) in
+    //
+    //            self.subjects.removeAll()
+    //
+    //            for child in snapshot.children {
+    //                let snap = child as! DataSnapshot
+    //                let key = snap.key
+    //
+    //                let subjectName = Subject(name: key)
+    //
+    //                self.subjects.append(subjectName)
+    //            }
+    //            self.tableView.reloadData()
+    //        }
+    //    }
     
 }
 
 extension UploadScheduleViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventsFromTheServer.count
+        loadDate()
+        guard let eventDate = eventsFromTheServer[dateNumberStr] else {return 0}
+        return eventDate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell", for: indexPath)
-            
-            for date in eventsFromTheServer.keys {
-                let dayStr = date.components(separatedBy: " ").last
-                
-                if dayStr == selectedDate {
-                    for event in eventsFromTheServer.values {
-                        
-                        eventArray.append(event)
-                        cell.textLabel?.text = eventArray[indexPath.row]
-                    }
-                } else {
-                    return UITableViewCell()
-                }
-            }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell", for: indexPath)
+        
+        let dayStr = dateNumberStr.components(separatedBy: " ").last
+        
+        if dayStr == selectedDate {
+            cell.textLabel?.text = (eventsFromTheServer[dateNumberStr])?[indexPath.row]
+        } else {
+            return UITableViewCell()
+        }
         return cell
     }
-    
 }
 
 extension UploadScheduleViewController : JTAppleCalendarViewDataSource {
@@ -269,6 +266,7 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
         setUpViewsOfCalendar(from: visibleDates)
         
         monthText = month.text ?? ""
+        yearText = year.text ?? ""
         reloadNewMonthEvent()
     }
     
@@ -277,43 +275,76 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
 extension UploadScheduleViewController {
     func setAddButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     @objc func addButtonTapped() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "CreateEventViewController") as? CreateEventViewController else {return}
         
+        vc.selectedDate = selectedDate
+        vc.selectedMonth = monthText
+        vc.selectedYear = yearText
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func loadDetail(completion: @escaping ([Date:String]) -> Void) {
+    func loadDate() {
         
-        var eventDict : [Date:String] = [:]
+        let dict = ["January" : "01", "February" : "02", "March" : "03", "April" : "04", "May" : "05", "June" : "06", "July" : "07", "August" : "08", "September" : "09", "October" : "10", "November" : "11", "December" : "12"]
         
-        //need to get eventUID
+        guard let monthText = month.text,
+            let yearText = year.text else {return}
+        
+        guard let monthNumber = dict[monthText] else {return}
+        
+        dateNumberStr = yearText + " " + monthNumber + " " + selectedDate
+    }
+    
+    func loadDetail(completion: @escaping ([Date:[String]]) -> Void) {
+        
+        var eventDict : [Date:[String]] = [:]
+        
         self.ref.child("Tuition").child("Event").queryOrdered(byChild: "Month").queryEqual(toValue: self.monthText).observe(.value) { (snapshot) in
             self.formatter.dateFormat = "yyyy MM d"
             
-            if let dict = snapshot.value as? [String:Any],
-                let monthDict = dict["EventID"] as? [String:Any],
-                let dateString = monthDict["Date"] as? String,
-                let date = self.formatter.date(from: dateString),
-                let eventType = monthDict["Event Type"] as? String,
-                let subject = monthDict["Subject"] as? String {
-                
-                eventDict[date] = subject + " " + eventType
-                
-                completion(eventDict)
-                
-                
-                
+            if let dict = snapshot.value as? [String:[String:Any]] {
+                for (_, v) in dict {
+                    if let dateString = v["Date"] as? String,
+                        let date = self.formatter.date(from: dateString),
+                        let eventType = v["Event Type"] as? String,
+                        let subject = v["Subject"] as? String {
+                        
+                        let subjectName = subject + " " + eventType
+                        
+                        if eventDict[date] != nil{
+                            //correctDate.append(subjectName)
+                            eventDict[date]?.append(subjectName)
+                        } else {
+                            eventDict[date] = [subjectName]
+                        }
+                        
+                        //array.append(subjectName)
+                        //eventDict[date] = array
+                    }
+                    completion(eventDict)
+                }
             }
         }
     }
     
+    //    date is empty
+    //    dict["key"] = [event]
+    //    not empty
+    //    append
+    
+    //    date : [maths test, physics test]
     func reloadNewMonthEvent() {
         DispatchQueue.global().asyncAfter(deadline: .now()) {
             self.loadDetail(completion: { (eventDict) in
                 
                 for (date, event) in eventDict {
                     let stringDate = self.formatter.string(from: date)
+                    
                     self.eventsFromTheServer[stringDate] = event
                 }
                 
@@ -324,6 +355,7 @@ extension UploadScheduleViewController {
                         self.firstTimeChecker = false
                     }
                 }
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             })
         }
     }

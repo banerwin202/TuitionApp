@@ -74,7 +74,7 @@ class StudentViewController: UIViewController {
         super.viewDidLoad()
         
         calendarView.scrollToDate(Date(), animateScroll: false)
-//        calendarView.selectDates([Date()])
+        //        calendarView.selectDates([Date()])
         
         ref = Database.database().reference()
         
@@ -125,22 +125,22 @@ class StudentViewController: UIViewController {
         
         guard let validCell = view as? CustomCell else {return}
         
-//        //InDate, OutDate
-//        if cellState.dateBelongsTo != .thisMonth {
-//            validCell.dateLabel.text = ""
-//            validCell.isUserInteractionEnabled = false
-////            self.stableBackView.isHidden = true
-//        } else if date.isSmaller(to: Date()) && !preDateSelectable {
-//            validCell.dateLabel.text = "-"
-//            validCell.dateLabel.textColor = UIColor.white
-//            validCell.isUserInteractionEnabled = true
-////            self.stableBackView.isHidden = true
-//        } else {
-////            self.stableBackView.isHidden = false
-//            validCell.isUserInteractionEnabled = true
-//            validCell.dateLabel.text = cellState.text
-//            validCell.dateLabel.textColor = selectedMonthColor
-//        }
+        //        //InDate, OutDate
+        //        if cellState.dateBelongsTo != .thisMonth {
+        //            validCell.dateLabel.text = ""
+        //            validCell.isUserInteractionEnabled = false
+        ////            self.stableBackView.isHidden = true
+        //        } else if date.isSmaller(to: Date()) && !preDateSelectable {
+        //            validCell.dateLabel.text = "-"
+        //            validCell.dateLabel.textColor = UIColor.white
+        //            validCell.isUserInteractionEnabled = true
+        ////            self.stableBackView.isHidden = true
+        //        } else {
+        ////            self.stableBackView.isHidden = false
+        //            validCell.isUserInteractionEnabled = true
+        //            validCell.dateLabel.text = cellState.text
+        //            validCell.dateLabel.textColor = selectedMonthColor
+        //        }
         
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
@@ -157,7 +157,7 @@ class StudentViewController: UIViewController {
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
         
-//        calendarView.visibleDates().indates
+        //        calendarView.visibleDates().indates
         
         //Setup labels
         calendarView.visibleDates { (visibleDates) in
@@ -175,12 +175,12 @@ class StudentViewController: UIViewController {
         
         year.text = String(yearNumber)
         month.text = monthName
-            
-//        formatter.dateFormat = "yyyy"
-//        year.text = formatter.string(from: date)
-//
-//        formatter.dateFormat = "MMMM"
-//        month.text = formatter.string(from: date)
+        
+        //        formatter.dateFormat = "yyyy"
+        //        year.text = formatter.string(from: date)
+        //
+        //        formatter.dateFormat = "MMMM"
+        //        month.text = formatter.string(from: date)
     }
     
     
@@ -245,10 +245,10 @@ extension StudentViewController : UITableViewDataSource, UITableViewDelegate {
         if tableView == self.calendarTableView {
             cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell", for: indexPath)
             
-//            formatter.dateFormat = "dd"
+            //            formatter.dateFormat = "dd"
             for date in eventsFromTheServer.keys {
-//                guard let dateData = formatter.date(from: date) else {return}
-//                let dayStr = formatter.string(from: dateData)
+                //                guard let dateData = formatter.date(from: date) else {return}
+                //                let dayStr = formatter.string(from: dateData)
                 let dayStr = date.components(separatedBy: " ").last
                 
                 if dayStr == selectedDate {
@@ -258,7 +258,7 @@ extension StudentViewController : UITableViewDataSource, UITableViewDelegate {
                         cell?.textLabel?.text = eventArray[indexPath.row]
                     }
                 } else {
-//                    eventArray.removeAll()
+                    //                    eventArray.removeAll()
                     return UITableViewCell()
                 }
             }
@@ -343,7 +343,7 @@ extension StudentViewController : JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
-//        calendarTableView.reloadData()
+        //        calendarTableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -413,23 +413,24 @@ extension StudentViewController {
         
         var eventDict : [Date:String] = [:]
         
-            //need to get eventUID
-            self.ref.child("Tuition").child("Event").queryOrdered(byChild: "Month").queryEqual(toValue: self.monthText).observe(.value) { (snapshot) in
-                self.formatter.dateFormat = "yyyy MM d"
+        //need to get eventUID
+        self.ref.child("Tuition").child("Event").queryOrdered(byChild: "Month").queryEqual(toValue: self.monthText).observe(.value) { (snapshot) in
+            self.formatter.dateFormat = "yyyy MM d"
+            
+            
+            if let dict = snapshot.value as? [String:Any] {
+                let keys = dict.keys
                 
-                if let dict = snapshot.value as? [String:Any],
-                    let monthDict = dict["EventID"] as? [String:Any],
-                    let dateString = monthDict["Date"] as? String,
-                    let date = self.formatter.date(from: dateString),
-                    let eventType = monthDict["Event Type"] as? String,
-                    let subject = monthDict["Subject"] as? String {
-                    
-                    eventDict[date] = subject + " " + eventType
-                    
+                for key in keys {
+                    if let monthDict = dict[key] as? [String:Any],
+                        let dateString = monthDict["Date"] as? String,
+                        let date = self.formatter.date(from: dateString),
+                        let eventType = monthDict["Event Type"] as? String,
+                        let subject = monthDict["Subject"] as? String {
+                        eventDict[date] = subject + " " + eventType
+                    }
                     completion(eventDict)
-                    
-                
-                
+                }
             }
         }
     }
@@ -444,11 +445,11 @@ extension StudentViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    if self.firstTimeChecker == true {
+//                    if self.firstTimeChecker == true {
                         self.calendarView.reloadData()
                         self.calendarView.selectDates([Date()])
                         self.firstTimeChecker = false
-                    }
+//                    }
                 }
             })
         }
