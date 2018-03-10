@@ -144,32 +144,7 @@ class UploadScheduleViewController: UIViewController {
         year.text = String(yearNumber)
         month.text = monthName
         
-        //        formatter.dateFormat = "yyyy"
-        //        year.text = formatter.string(from: date)
-        //
-        //        formatter.dateFormat = "MMMM"
-        //        month.text = formatter.string(from: date)
     }
-    
-    
-    //    //SUBJECT NAMES
-    //    func getSubjectName() {
-    //        ref.child("Tuition").child("Student").child("StudentID").child("Subjects").observe(.value) { (snapshot) in
-    //
-    //            self.subjects.removeAll()
-    //
-    //            for child in snapshot.children {
-    //                let snap = child as! DataSnapshot
-    //                let key = snap.key
-    //
-    //                let subjectName = Subject(name: key)
-    //
-    //                self.subjects.append(subjectName)
-    //            }
-    //            self.tableView.reloadData()
-    //        }
-    //    }
-    
 }
 
 extension UploadScheduleViewController : UITableViewDataSource, UITableViewDelegate {
@@ -232,8 +207,6 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         guard let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {return}
         
-        
-        
         cell.dateLabel.text = cellState.text
     }
     
@@ -259,7 +232,6 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
-        //        calendarTableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
