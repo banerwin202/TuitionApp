@@ -16,12 +16,6 @@ class UploadScheduleViewController: UIViewController {
     
     let preDateSelectable : Bool = true
     
-    //    var subjects : [Subject] = []
-    
-    var eventArray : [String] = []
-    
-    var selectedStudent : Student = Student()
-    
     var ref : DatabaseReference!
     
     let formatter = DateFormatter()
@@ -69,6 +63,9 @@ class UploadScheduleViewController: UIViewController {
         
         reloadNewMonthEvent()
         
+        if eventsFromTheServer.isEmpty {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
         
     }
     
@@ -168,6 +165,30 @@ extension UploadScheduleViewController : UITableViewDataSource, UITableViewDeleg
         }
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        let dayStr = dateNumberStr.components(separatedBy: " ").last
+//
+//        if dayStr == selectedDate {
+//            ref.child("Tuition").child("Event").observe(.value, with: { (snapshot) in
+//                if let dict = snapshot.value as? [String:[String:String]] {
+//                    for (k, v) in dict {
+//                        if let chosenEvent = (self.eventsFromTheServer[self.dateNumberStr])?[indexPath.row],
+//                            let subjectValue = v["Subject"],
+//                            let eventTypeValue = v["Event Type"] {
+//                            if subjectValue + " " + eventTypeValue == chosenEvent {
+//                                self.ref.child("Tuition").child("Event").child(k).removeValue()
+////                                tableView.deleteRows(at: [indexPath], with: .automatic)
+//                                (self.eventsFromTheServer[self.dateNumberStr])?.remove(at: indexPath.row)
+//                                tableView.reloadData()
+//                            }
+//                        }
+//                    }
+//                }
+//            })
+//        }
+//    }
 }
 
 extension UploadScheduleViewController : JTAppleCalendarViewDataSource {
@@ -324,10 +345,10 @@ extension UploadScheduleViewController {
                 }
                 
                 DispatchQueue.main.async {
-//                    formatter.dateFormat =
-//                    guard let selectedDateFormat = self.formatter.date(from: self.dateNumberStr) else {return}
-//                    self.calendarView.selectDates([selectedDateFormat])
-
+                    //                    formatter.dateFormat =
+                    //                    guard let selectedDateFormat = self.formatter.date(from: self.dateNumberStr) else {return}
+                    //                    self.calendarView.selectDates([selectedDateFormat])
+                    
                     
                     if self.firstTimeChecker == true {
                         self.calendarView.reloadData()
