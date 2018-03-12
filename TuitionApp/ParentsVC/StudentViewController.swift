@@ -83,6 +83,13 @@ class StudentViewController: UIViewController {
         
         reloadNewMonthEvent()
         
+        //Set Background image
+        let imageView = UIImageView()
+        imageView.image = UIImage(named:"StudentStudying")
+        imageView.contentMode = .scaleAspectFill
+        
+        self.tableView.backgroundView = imageView
+        
         
         
     }

@@ -37,6 +37,12 @@ class ProfileViewController: UIViewController {
         ref = Database.database().reference()
         observeUsers()
        
+        //Set Background image
+            let imageView = UIImageView()
+            imageView.image = UIImage(named:"StudentStudying")
+            imageView.contentMode = .scaleAspectFill
+        
+        self.collectionView?.backgroundView = imageView
         
    
     }
@@ -124,6 +130,9 @@ extension ProfileViewController : UICollectionViewDataSource {
         
         cell.idLabel.text = students[indexPath.row].uid
         cell.nameLabel.text = students[indexPath.row].name
+        
+        cell.contentView.backgroundColor = UIColor.clear
+        cell.layer.backgroundColor = UIColor.clear.cgColor
         
         return cell
     }

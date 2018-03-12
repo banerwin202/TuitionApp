@@ -20,6 +20,12 @@ class TCMainViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(goToStudentProfileVC(notification:)), name: NSNotification.Name(rawValue: "Navigate"), object: nil)
         
+        //Set Background Image
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "EducationBackground")
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        
         
         
     }

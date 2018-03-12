@@ -25,6 +25,12 @@ class NotificationViewController: UIViewController {
         ref = Database.database().reference()
         observeNotification()
         
+        let imageView = UIImageView()
+        imageView.image = UIImage(named:"StudentStudying")
+        imageView.contentMode = .scaleAspectFill
+        
+        self.tableView.backgroundView = imageView
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -36,6 +36,7 @@ class ResultsViewController: UIViewController {
 //        subJectLabel.text = selectedSubject.name
         ref = Database.database().reference()
         observeFirebase()
+        
     }
     
     func observeFirebase() {
