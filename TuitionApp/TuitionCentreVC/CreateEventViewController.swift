@@ -11,7 +11,11 @@ import FirebaseDatabase
 
 class CreateEventViewController: UIViewController {
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.text = selectedDate + " " + selectedMonth + " " + selectedYear
+        }
+    }
     
     @IBOutlet weak var eventTypeTextField: UITextField!
     
@@ -31,8 +35,6 @@ class CreateEventViewController: UIViewController {
     
     var dateStr : String = ""
     
-    var monthNumber : String = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,12 +44,12 @@ class CreateEventViewController: UIViewController {
     }
     
     func loadDate() {
-        
-        let dict = ["01" : "January", "02" : "February", "03" : "March", "04" : "April", "05" : "May", "06" : "June", "07" : "July", "08" : "August", "09" : "September", "10" : "October", "11" : "November", "12" : "December"]
-        
-        guard let monthName = dict[selectedMonth] else {return}
-        
-        dateLabel.text = "\(selectedDate)" + monthName + "\(selectedYear)"
+
+        let dict = ["January" : "01", "February" : "02", "March" : "03", "April" : "04", "May" : "05", "June" : "06", "July" : "07", "August" : "08", "September" : "09", "October" : "10", "November" : "11", "December" : "12"]
+
+        guard let monthNumber = dict[selectedMonth] else {return}
+
+        dateStr = "\(selectedYear) \(monthNumber) \(selectedDate)"
     }
     
     @objc func uploadEvent() {
@@ -58,7 +60,9 @@ class CreateEventViewController: UIViewController {
         
         let newEvent : [String:Any] = ["Event Type" : eventType, "Subject" : subject, "Date" : dateStr, "Month" : selectedMonth]
         
-        ref.setValue(newEvent)
+        if eventType != "" && subject != "" {
+            ref.setValue(newEvent)
+        }
         
         navigationController?.popViewController(animated: true)
         

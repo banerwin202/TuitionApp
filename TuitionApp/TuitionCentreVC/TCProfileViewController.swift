@@ -39,7 +39,7 @@ class TCProfileViewController: UIViewController {
                 
                 let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
                 
-                guard let navVC = sb.instantiateViewController(withIdentifier: "mainTabBarController") as? UITabBarController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "mainNavigationController") as? UINavigationController else {return}
                 
                 present(navVC, animated: true, completion: nil)
                

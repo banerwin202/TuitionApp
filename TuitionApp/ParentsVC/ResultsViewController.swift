@@ -35,6 +35,7 @@ class ResultsViewController: UIViewController {
         
         ref = Database.database().reference()
         observeFirebase()
+        
     }
     
     func observeFirebase() {

@@ -209,7 +209,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <segue destination="N9N-VG-kJa" kind="show" id="fVL-WE-Qe9"/>
+                                            <segue destination="N9N-VG-kJa" kind="show" id="bLd-1b-pwt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -309,7 +309,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87385827302932739" green="0.94704657793045044" blue="0.96328884363174438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OBE-GP-36T" firstAttribute="trailing" secondItem="sAe-hc-kiK" secondAttribute="trailing" constant="20" id="D13-ZO-NrD"/>
                             <constraint firstItem="hSX-jW-szx" firstAttribute="top" secondItem="sAe-hc-kiK" secondAttribute="bottom" constant="60" id="Erg-7i-eV5"/>
@@ -334,7 +334,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ENn-X5-30c">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pc2-gE-aWu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="pc2-gE-aWu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="meH-3p-0cC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

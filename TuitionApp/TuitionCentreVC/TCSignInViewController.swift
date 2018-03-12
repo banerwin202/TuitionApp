@@ -30,6 +30,11 @@ class TCSignInViewController: UIViewController {
         
         ref = Database.database().reference()
         
+        //Set Background Image
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "EducationBackground")
+        self.view.insertSubview(backgroundImage, at: 0)
+        
     }
     
     func userChecking () {

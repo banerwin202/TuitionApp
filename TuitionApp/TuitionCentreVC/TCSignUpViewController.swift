@@ -24,6 +24,12 @@ class TCSignUpViewController: UIViewController {
         super.viewDidLoad()
 
         ref = Database.database().reference()
+        
+        //Set Background Image
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "EducationBackground")
+        self.view.insertSubview(backgroundImage, at: 0)
+        
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
