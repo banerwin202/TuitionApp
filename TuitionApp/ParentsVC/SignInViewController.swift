@@ -54,8 +54,7 @@ class SignInViewController: UIViewController {
             if Auth.auth().currentUser != nil && a == snapshot.key {
                 let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
 //                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
-//                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
-                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
 
                 self.present(navVC, animated: true, completion: nil)
             }
@@ -88,8 +87,8 @@ class SignInViewController: UIViewController {
                                     self.emailTextField.text = ""
                                     self.passwordTextField.text = ""
                                     let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
-//                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
-                                    guard let navVC = sb.instantiateViewController(withIdentifier: "AttendanceViewController") as? AttendanceViewController else {return}
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+//                                    guard let navVC = sb.instantiateViewController(withIdentifier: "AttendanceViewController") as? AttendanceViewController else {return}
 
                                     self.present(navVC, animated: true, completion: nil)
                                     
