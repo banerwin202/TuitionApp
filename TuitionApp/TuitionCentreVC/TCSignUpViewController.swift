@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import KYDrawerController
 
 class TCSignUpViewController: UIViewController {
 
@@ -74,8 +75,10 @@ class TCSignUpViewController: UIViewController {
                     let userPost: [String:Any] = ["Username": userName, "Email": email, "Contact":contact]
                     
                     self.ref.child("Tuition Centre").child(validUser.uid).setValue(userPost)
+                    
                     let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                    guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+                    guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController else {return}
+                    
                     self.present(navVC, animated: true, completion: nil)
                     print("sign up method successful")
                 }

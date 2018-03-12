@@ -75,7 +75,7 @@ class TCSignInViewController: UIViewController {
                                     self.emailTextField.text = ""
                                     self.passwordTextField.text = ""
                                     let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController else {return}
                                     self.present(navVC, animated: true, completion: nil)
                                     
                                 }
