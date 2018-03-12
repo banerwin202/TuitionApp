@@ -19,8 +19,8 @@ class NotificationClass {
 
     init(uid : String, dict : [String:Any]) {
         self.uid = uid
-        self.title = dict["title"] as? String ?? "No Title"
-        self.text = dict["text"] as? String ?? "No Text"
+        self.title = dict["Title"] as? String ?? "No Title"
+        self.text = dict["Text"] as? String ?? "No Text"
     }
 }
 
