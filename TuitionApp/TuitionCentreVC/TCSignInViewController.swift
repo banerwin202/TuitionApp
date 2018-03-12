@@ -33,15 +33,15 @@ class TCSignInViewController: UIViewController {
     }
     
     func userChecking () {
-//        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
-//            guard let currentUserUID = Auth.auth().currentUser?.uid else {return}
-//
-//            if Auth.auth().currentUser != nil && currentUserUID == snapshot.key {
-//                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-//                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController else {return}
-//                self.present(navVC, animated: true, completion: nil)
-//            }
-//        }
+        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
+            guard let currentUserUID = Auth.auth().currentUser?.uid else {return}
+
+            if Auth.auth().currentUser != nil && currentUserUID == snapshot.key {
+                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
+                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController else {return}
+                self.present(navVC, animated: true, completion: nil)
+            }
+        }
     }
     
     @objc func signInButtonTapped() {

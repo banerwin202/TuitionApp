@@ -39,23 +39,27 @@ class SignInViewController: UIViewController {
             
             if Auth.auth().currentUser != nil && a == snapshot.key {
                 let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
-                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+//                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+                guard let navVC = sb.instantiateViewController(withIdentifier: "AttendanceViewController") as? AttendanceViewController else {return}
+
                 self.present(navVC, animated: true, completion: nil)
             }
         }
     }
     
     func TCUserChecking () {
-//        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
-//            guard let a = Auth.auth().currentUser?.uid else {return}
-//            
-//            if Auth.auth().currentUser != nil && a == snapshot.key {
-//                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
-////                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
+        ref.child("Tuition Centre").observe(.childAdded) { (snapshot) in
+            guard let a = Auth.auth().currentUser?.uid else {return}
+            
+            if Auth.auth().currentUser != nil && a == snapshot.key {
+                let sb = UIStoryboard(name: "TCDetail", bundle: Bundle.main)
+//                guard let navVC = sb.instantiateViewController(withIdentifier: "TCNavigationController") as? UINavigationController else {return}
 //                guard let navVC = sb.instantiateViewController(withIdentifier: "KYDrawerController") as? DrawerViewController else {return}
-//                self.present(navVC, animated: true, completion: nil)
-//            }
-//        }
+                guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+
+                self.present(navVC, animated: true, completion: nil)
+            }
+        }
     }
     
     @objc func signInButtonTapped() {
@@ -84,7 +88,9 @@ class SignInViewController: UIViewController {
                                     self.emailTextField.text = ""
                                     self.passwordTextField.text = ""
                                     let sb = UIStoryboard(name: "Detail", bundle: Bundle.main)
-                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+//                                    guard let navVC = sb.instantiateViewController(withIdentifier: "TabBarController1") as? UITabBarController else {return}
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "AttendanceViewController") as? AttendanceViewController else {return}
+
                                     self.present(navVC, animated: true, completion: nil)
                                     
                                 }

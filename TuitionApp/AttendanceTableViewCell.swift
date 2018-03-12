@@ -13,6 +13,11 @@ class AttendanceTableViewCell: UITableViewCell, PieChartDelegate {
 
     @IBOutlet weak var chartView: PieChart!
     
+    @IBOutlet weak var attendanceDateLabel: UILabel!
+    @IBOutlet weak var attendLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
+    
+    
     fileprivate static let alpha: CGFloat = 0.5
     let colors = [
         UIColor.yellow.withAlphaComponent(alpha),
@@ -31,9 +36,9 @@ class AttendanceTableViewCell: UITableViewCell, PieChartDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        chartView.layers = [createPlainTextLayer(), createTextWithLinesLayer()]
-        chartView.delegate = self
-        chartView.models = createModels() // order is important - models have to be set at the end
+//        chartView.layers = [createPlainTextLayer(), createTextWithLinesLayer()]
+//        chartView.delegate = self
+//        chartView.models = createModels() // order is important - models have to be set at the end
     }
     
     // MARK: - PieChartDelegate
