@@ -16,12 +16,6 @@ class UploadScheduleViewController: UIViewController {
     
     let preDateSelectable : Bool = true
     
-    //    var subjects : [Subject] = []
-    
-    var eventArray : [String] = []
-    
-    var selectedStudent : Student = Student()
-    
     var ref : DatabaseReference!
     
     let formatter = DateFormatter()
@@ -69,6 +63,9 @@ class UploadScheduleViewController: UIViewController {
         
         reloadNewMonthEvent()
         
+        if eventsFromTheServer.isEmpty {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
         
     }
     
@@ -144,32 +141,7 @@ class UploadScheduleViewController: UIViewController {
         year.text = String(yearNumber)
         month.text = monthName
         
-        //        formatter.dateFormat = "yyyy"
-        //        year.text = formatter.string(from: date)
-        //
-        //        formatter.dateFormat = "MMMM"
-        //        month.text = formatter.string(from: date)
     }
-    
-    
-    //    //SUBJECT NAMES
-    //    func getSubjectName() {
-    //        ref.child("Tuition").child("Student").child("StudentID").child("Subjects").observe(.value) { (snapshot) in
-    //
-    //            self.subjects.removeAll()
-    //
-    //            for child in snapshot.children {
-    //                let snap = child as! DataSnapshot
-    //                let key = snap.key
-    //
-    //                let subjectName = Subject(name: key)
-    //
-    //                self.subjects.append(subjectName)
-    //            }
-    //            self.tableView.reloadData()
-    //        }
-    //    }
-    
 }
 
 extension UploadScheduleViewController : UITableViewDataSource, UITableViewDelegate {
@@ -193,6 +165,30 @@ extension UploadScheduleViewController : UITableViewDataSource, UITableViewDeleg
         }
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        let dayStr = dateNumberStr.components(separatedBy: " ").last
+//
+//        if dayStr == selectedDate {
+//            ref.child("Tuition").child("Event").observe(.value, with: { (snapshot) in
+//                if let dict = snapshot.value as? [String:[String:String]] {
+//                    for (k, v) in dict {
+//                        if let chosenEvent = (self.eventsFromTheServer[self.dateNumberStr])?[indexPath.row],
+//                            let subjectValue = v["Subject"],
+//                            let eventTypeValue = v["Event Type"] {
+//                            if subjectValue + " " + eventTypeValue == chosenEvent {
+//                                self.ref.child("Tuition").child("Event").child(k).removeValue()
+////                                tableView.deleteRows(at: [indexPath], with: .automatic)
+//                                (self.eventsFromTheServer[self.dateNumberStr])?.remove(at: indexPath.row)
+//                                tableView.reloadData()
+//                            }
+//                        }
+//                    }
+//                }
+//            })
+//        }
+//    }
 }
 
 extension UploadScheduleViewController : JTAppleCalendarViewDataSource {
@@ -232,8 +228,6 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         guard let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {return}
         
-        
-        
         cell.dateLabel.text = cellState.text
     }
     
@@ -259,7 +253,6 @@ extension UploadScheduleViewController : JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellEvents(view: cell, cellState: cellState)
         
-        //        calendarTableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -308,6 +301,7 @@ extension UploadScheduleViewController {
             self.formatter.dateFormat = "yyyy MM d"
             
             if let dict = snapshot.value as? [String:[String:Any]] {
+                eventDict.removeAll()
                 for (_, v) in dict {
                     if let dateString = v["Date"] as? String,
                         let date = self.formatter.date(from: dateString),
@@ -315,6 +309,7 @@ extension UploadScheduleViewController {
                         let subject = v["Subject"] as? String {
                         
                         let subjectName = subject + " " + eventType
+                        
                         
                         if eventDict[date] != nil{
                             //correctDate.append(subjectName)
@@ -327,6 +322,7 @@ extension UploadScheduleViewController {
                         //eventDict[date] = array
                     }
                     completion(eventDict)
+                    
                 }
             }
         }
@@ -349,6 +345,11 @@ extension UploadScheduleViewController {
                 }
                 
                 DispatchQueue.main.async {
+                    //                    formatter.dateFormat =
+                    //                    guard let selectedDateFormat = self.formatter.date(from: self.dateNumberStr) else {return}
+                    //                    self.calendarView.selectDates([selectedDateFormat])
+                    
+                    
                     if self.firstTimeChecker == true {
                         self.calendarView.reloadData()
                         self.calendarView.selectDates([Date()])
